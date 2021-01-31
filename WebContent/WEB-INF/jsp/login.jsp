@@ -1,15 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>スッキリ商店</title>
-</head>
-<body>
-<form action="/docoTsubu/LoginServlet" method="post">
-ユーザーID:<input type="text" name="userId"><br>
-パスワード:<input type="password" name="pass"><br>
-<input type="submit" value="ログイン">
-</form>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>TestApp</title>
+    </head>
+    <body>
+        <div>
+            <h3>Login</h3>
+            <form action="./LoginServlet" method="post">
+                <p>・ニックネーム:</p>
+                <input type="text" name="nickName">
+                <p>・パスワード:</p>
+                <input type="password" name="password">
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </body>
 </html>

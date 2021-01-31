@@ -1,24 +1,26 @@
+
 package model;
 
 import java.io.Serializable;
 
 public class User implements Serializable {
-  private String name; // ユーザー名
-  private String pass; // パスワード
+    private String nickName;
+    private String password;
 
-  public User() {
-  }
+    public User() {
+    }
 
-  public User(String name, String pass) {
-    this.name = name;
-    this.pass = pass;
-  }
+    public User(String nickName, String password) {
+        this.nickName = nickName;
+        this.password = password;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public String getNickName() {
+        return nickName;
+    }
 
-  public String getPass() {
-    return pass;
-  }
+    public String getPassword() {
+        return password;
+    }
+
 }
