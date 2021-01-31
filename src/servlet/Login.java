@@ -42,7 +42,7 @@ public class Login extends HttpServlet {
     // ログイン結果画面にフォワード
     RequestDispatcher dispatcher =
         request.getRequestDispatcher
-            ("/WebContent/jsp/loginResult.jsp");
+            ("/WEB-INF/jsp/loginResult.jsp");
     dispatcher.forward(request, response);
   }
 }
