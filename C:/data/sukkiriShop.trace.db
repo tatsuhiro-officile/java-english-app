@@ -1,0 +1,32 @@
+2021-01-29 19:28:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "ACCOUNT" が見つかりません
+Table "ACCOUNT" not found; SQL statement:
+SELECT USER_ID, PASS, MAIL, NAME, AGE FROM ACCOUNT WHERE USER_ID = ? AND PASS = ? [42102-200]
+2021-01-29 19:28:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "ACCOUNT" が見つかりません
+Table "ACCOUNT" not found; SQL statement:
+SELECT USER_ID, PASS, MAIL, NAME, AGE FROM ACCOUNT WHERE USER_ID = ? AND PASS = ? [42102-200]
+2021-01-29 19:30:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "ACCOUNT" が見つかりません
+Table "ACCOUNT" not found; SQL statement:
+SELECT USER_ID, PASS, MAIL, NAME, AGE FROM ACCOUNT WHERE USER_ID = ? AND PASS = ? [42102-200]
+2021-01-29 19:30:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "ACCOUNT" が見つかりません
+Table "ACCOUNT" not found; SQL statement:
+SELECT USER_ID, PASS, MAIL, NAME, AGE FROM ACCOUNT WHERE USER_ID = ? AND PASS = ? [42102-200]
+2021-01-29 20:05:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "ACCOUNT" が見つかりません
+Table "ACCOUNT" not found; SQL statement:
+SELECT USER_ID, PASS, MAIL, NAME, AGE FROM ACCOUNT WHERE USER_ID = ? AND PASS = ? [42102-200]
+2021-01-29 20:05:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "ACCOUNT" が見つかりません
+Table "ACCOUNT" not found; SQL statement:
+SELECT USER_ID, PASS, MAIL, NAME, AGE FROM ACCOUNT WHERE USER_ID = ? AND PASS = ? [42102-200]
+2021-01-29 20:05:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "ACCOUNT" が見つかりません
+Table "ACCOUNT" not found; SQL statement:
+SELECT USER_ID, PASS, MAIL, NAME, AGE FROM ACCOUNT WHERE USER_ID = ? AND PASS = ? [42102-200]
+2021-01-29 20:05:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "ACCOUNT" が見つかりません
+Table "ACCOUNT" not found; SQL statement:
+SELECT USER_ID, PASS, MAIL, NAME, AGE FROM ACCOUNT WHERE USER_ID = ? AND PASS = ? [42102-200]
