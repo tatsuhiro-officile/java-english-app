@@ -1,9 +1,4 @@
-/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/Login.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/User.java
-/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/LoginLogic.java
-/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/GetMutterListLogic.java
-/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/Main.java
-/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/Logout.java
-/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/dao/MutterDAO.java
-/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/PostMutterLogic.java
-/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/Mutter.java
+/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/dao/UserDao.java
+/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/LoginServlet.java
+/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/CheckUserLogic.java
