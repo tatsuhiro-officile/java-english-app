@@ -57,6 +57,7 @@ public class Main extends HttpServlet {
     // リクエストパラメータの取得
     request.setCharacterEncoding("UTF-8");
     String text = request.getParameter("text");
+    String text2 = request.getParameter("text2");
 
     // 入力値チェック
     if (text != null && text.length() != 0) {
@@ -68,15 +69,37 @@ public class Main extends HttpServlet {
       // セッションスコープに保存されたユーザー情報を取得
       HttpSession session = request.getSession();
       User loginUser = (User) session.getAttribute("loginUser");
-
       // つぶやきをつぶやきリストに追加
-      Mutter mutter = new Mutter(loginUser.getName(), text);
+      Mutter mutter = new Mutter(loginUser.getName(), text,text2);
+
       PostMutterLogic postMutterLogic = new PostMutterLogic();
       postMutterLogic.execute(mutter, mutterList);
 
       // アプリケーションスコープにつぶやきリストを保存
       application.setAttribute("mutterList", mutterList);
-    } else {
+      }
+    else if(text != null && text.length() == 1) {
+        // アプリケーションスコープに保存されたつぶやきリストを取得
+
+        ServletContext application = this.getServletContext();
+        ServletContext applocation = this.getServletContext();
+
+        List<Mutter> mutterList =
+            (List<Mutter>) application.getAttribute("mutterList");
+
+        // セッションスコープに保存されたユーザー情報を取得
+        HttpSession session = request.getSession();
+        User loginUser = (User) session.getAttribute("loginUser");
+
+        // つぶやきをつぶやきリストに追加
+        Mutter mutter = new Mutter(loginUser.getName(), text,text2);
+        PostMutterLogic postMutterLogic = new PostMutterLogic();
+
+        postMutterLogic.execute(mutter, mutterList);
+
+        // アプリケーションスコープにつぶやきリストを保存
+        application.setAttribute("mutterList", mutterList);
+        }else {
       //エラーメッセージをリクエストスコープに保存
       request.setAttribute("errorMsg", "つぶやきが入力されていません");
     }

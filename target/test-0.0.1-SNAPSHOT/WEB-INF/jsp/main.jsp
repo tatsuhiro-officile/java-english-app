@@ -20,18 +20,22 @@ String errorMsg = (String) request.getAttribute("errorMsg");
 <h1>どこつぶメイン</h1>
 <p>
 <%= loginUser.getName() %>さん、ログイン中
-<a href="/docoTsubu/Logout">ログアウト</a>
+<a href="Test">ログアウト</a>
 </p>
-<p><a href="/docoTsubu/Main">更新</a></p>
-<form action="/docoTsubu/Main" method="post">
+<p><a href="Main">更新</a></p>
+<form action="Main" method="post">
 <input type="text" name="text">
+<input type="text" name="text2">
 <input type="submit" value="つぶやく">
 </form>
 <% if(errorMsg != null){ %>
 <p><%= errorMsg %></p>
 <% } %>
 <% for(Mutter mutter : mutterList){%>
-<p><%=mutter.getUserName()%>：<%=mutter.getText()%></p>
+<p><%=mutter.getUserName()%>：<%=mutter.getText()%>
+:<%=mutter.getText2() %>
+</p>
 <% } %>
+<a href="Test">ログアウト</a>
 </body>
 </html>

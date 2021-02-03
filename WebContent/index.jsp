@@ -1,4 +1,6 @@
 <%-- リスト10-6の状態 --%>
+<%-- contentTypeは送るデータの種類 --%>
+<%-- 文字コード--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>

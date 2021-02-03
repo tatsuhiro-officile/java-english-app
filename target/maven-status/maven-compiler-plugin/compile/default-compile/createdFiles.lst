@@ -5,3 +5,4 @@ model/User.class
 servlet/Logout.class
 model/LoginLogic.class
 model/Mutter.class
+servlet/Test.class
