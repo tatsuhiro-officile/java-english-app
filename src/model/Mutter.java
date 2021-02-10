@@ -3,17 +3,26 @@ package model;
 import java.io.Serializable;
 
 public class Mutter implements Serializable {
+  private int id; // id
   private String userName; // ユーザー名
   private String text; // つぶやき内容
-  private String text2;
 
   public Mutter() {
   }
 
-  public Mutter(String userName, String text,String text2) {
+  public Mutter(String userName, String text) {
     this.userName = userName;
     this.text = text;
-    this.text2= text2;
+  }
+
+  public Mutter(int id, String userName, String text) {
+    this.id = id;
+    this.userName = userName;
+    this.text = text;
+  }
+
+  public int getId() {
+    return id;
   }
 
   public String getUserName() {
@@ -21,9 +30,6 @@ public class Mutter implements Serializable {
   }
 
   public String getText() {
-   return text;
+    return text;
   }
-  public String getText2() {
-	  return text2;
-  }
-  }
+}

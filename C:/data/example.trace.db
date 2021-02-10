@@ -1,0 +1,16 @@
+2021-02-05 19:44:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "EMPLOYEE" が見つかりません
+Table "EMPLOYEE" not found; SQL statement:
+SELECT ID,NAME,AGE FROM EMPLOYEE [42102-200]
+2021-02-05 19:59:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "AGE[*] FROM EMPLOYEE"; 期待されるステートメント "ALTER, ANALYZE"
+Syntax error in SQL statement "AGE[*] FROM EMPLOYEE"; expected "ALTER, ANALYZE"; SQL statement:
+AGE FROM EMPLOYEE [42001-200]
+2021-02-05 20:00:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: SQLステートメントに文法エラーがあります "AGE[*] FROM EMPLOYEE"; 期待されるステートメント "ALTER, ANALYZE"
+Syntax error in SQL statement "AGE[*] FROM EMPLOYEE"; expected "ALTER, ANALYZE"; SQL statement:
+AGE FROM EMPLOYEE [42001-200]
+2021-02-05 20:01:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: テーブル "EMPLOYEE" が見つかりません
+Table "EMPLOYEE" not found; SQL statement:
+SELECT AGE FROM EMPLOYEE [42102-200]
