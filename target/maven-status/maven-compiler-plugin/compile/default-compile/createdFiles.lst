@@ -1,14 +1,9 @@
 dao/EmployeeDAO.class
-model/Human.class
-servlet/Logout.class
-model/Mutter.class
-model/GetMutterListLogic.class
-servlet/Login.class
-model/PostMutterLogic.class
 servlet/Main.class
 model/User.class
+servlet/Logout.class
 model/LoginLogic.class
-dao/Test.class
+model/Mutter.class
 servlet/Test.class
 dao/MutterDAO.class
 SelectEmployeeSample.class
