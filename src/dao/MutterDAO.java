@@ -14,7 +14,7 @@ public class MutterDAO {
 
   private final String DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
   private final String JDBC_URL =
-      "mysql2://root:fdg65*Fkkdw@localhost/mysql?reconnect=true";
+      "mysql://b32ab6bf45681a:b7722d39@us-cdbr-east-03.cleardb.com/heroku_9753101ada075c9?reconnect=true";
   private final String DB_USER = "root";
   private final String DB_PASS = "fdg65*Fkkdw";
 
