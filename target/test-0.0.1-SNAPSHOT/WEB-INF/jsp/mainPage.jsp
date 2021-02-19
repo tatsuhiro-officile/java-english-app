@@ -12,8 +12,6 @@
             <h3>メインページ</h3>
             <p>ようこそ<strong><%= findedUser.getNickName() %></strong>さん</p>
         </div>
-        <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 
 <textarea id="text">再生する内容</textarea>
 <button id="speak-btn">再生</button>
