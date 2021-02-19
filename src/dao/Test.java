@@ -16,7 +16,7 @@ public class Test {
         ResultSet rs = null;
 
     // SQL文の作成
-        String sql = "SELECT TEXT FROM MUTTER";
+        String sql = "INSERT INTO USER(ORIGINALID,NICKNAME, PASS) VALUES('2222', 'タツひろ', '2222')";
 
 
         try {
@@ -30,8 +30,8 @@ public class Test {
 
             System.out.println("SQL実行結果成功");
             // 実行結果取得
-            rs = stmt.executeQuery();
-            //stmt.executeUpdate();
+            //rs = stmt.executeQuery();
+            stmt.executeUpdate();
             System.out.println("実行結果取得");
 
             while (rs.next()) {
