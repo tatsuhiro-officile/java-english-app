@@ -15,7 +15,7 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 </head>
 <body>
 <c:out value="${userId.getNickName()}" />
-<a href="RegisterServlet">チャットへ</a>
+<a href="ChatServlet">チャットへ</a>
 <a href="RegisterServlet">問題へ</a>
 <a href="RegisterServlet">登録</a>
 </body>
