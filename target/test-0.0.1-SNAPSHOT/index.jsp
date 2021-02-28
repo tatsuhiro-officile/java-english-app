@@ -1,14 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%-- リスト10-6の状態 --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>TestApp</title>
+<meta charset="UTF-8">
+<title>どこつぶ</title>
 </head>
 <body>
-    <div>
-        <h1>ようこそ ゲスト さん</h1>
-        <a href="./LoginServlet">ログインページへ＞＞</a>
-    </div>
+<h1>どこつぶへようこそ</h1>
+<form action="Login" method="post">
+ユーザー名：<input type="text" name="name"><br>
+パスワード：<input type="password" name="pass"><br>
+あなたの性別<input type="text" name="sex"><br>
+<input type="submit" value="入る">
+
+<a href="LoginServlet">ログイン</a>
+<a href="RegisterServlet">登録</a>
+</form>
 </body>
 </html>

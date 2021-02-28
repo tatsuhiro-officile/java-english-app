@@ -8,7 +8,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import model.User;
+import model.Login;
+import model.Profile;
+import model.Register;
+
 
 public class UserDAO {
 
@@ -24,8 +27,9 @@ public class UserDAO {
         return DriverManager.getConnection(dbUrl, username, password);
     }
 
-    public User findUser(User user) {
-        User findedUser = null;
+    public Profile findByLogin(Login login) {
+
+        Profile profile = null;
 
         try {
                 // ドライバの読み込み。
@@ -33,19 +37,28 @@ public class UserDAO {
             // データベースへ接続のためprivateメソッドを呼び出す。
             try(Connection conn = getConnection()) {
                 // SELECT文を準備。
-                String sql = "SELECT * FROM account WHERE nickname = ? AND password = ?";
+                String sql = "SELECT ORIGINALID, PASS, POINT,NICKNAME FROM USER WHERE ORIGINALID = ? AND PASS = ?";
                 PreparedStatement pStmt = conn.prepareStatement(sql);
-                pStmt.setString(1, user.getNickName());
-                pStmt.setString(2, user.getPassword());
-                // SELECTを実行し、結果表を取得。
+                pStmt.setString(1, login.getOriginalid());
+                pStmt.setString(2, login.getpassword());
+
+                // SELECTを実行し、結果表を取得
                 ResultSet rs = pStmt.executeQuery();
-                // 一致したユーザーが存在した場合、
-                // そのユーザーを表すfindedUserインスタンスを生成。
+
+
+
+                // 一致したユーザーが存在した場合
+                // そのユーザーを表すAccountインスタンスを生成
                 if (rs.next()) {
-                // 結果表からデータを取得
-                    String nickName = rs.getString("nickname");
-                    String password = rs.getString("password");
-                    findedUser = new User(nickName, password);
+
+
+
+              	String userId = rs.getString("ORIGINALID");
+                  String pass = rs.getString("PASS");
+                 int point = rs.getInt("POINT");
+                 String nickname = rs.getString("NICKNAME");
+
+                  profile = new Profile(userId,nickname,pass,point);
                 }
             } catch (URISyntaxException e) {
                 e.printStackTrace();
@@ -58,7 +71,77 @@ public class UserDAO {
             e1.printStackTrace();
             return null;
         }
-        return findedUser;
+        return profile;
     }
+
+    public boolean create(Register register) {
+        try {
+            // ドライバの読み込み。
+        Class.forName ("com.mysql.cj.jdbc.Driver");
+        // データベースへ接続のためprivateメソッドを呼び出す。
+        try(Connection conn = getConnection()) {
+  	      String sql = "INSERT INTO USER(ORIGINALID,PASS,POINT,NICKNAME) VALUES(?, ?, ?, ?)";
+  	      PreparedStatement pStmt = conn.prepareStatement(sql);
+  	      // INSERT文中の「?」に使用する値を設定しSQLを完成
+  	      pStmt.setString(1, register.getOriginalid());
+  	      pStmt.setString(2, register.getPassword());
+  	      pStmt.setLong(3, register.getPoint());
+  	      pStmt.setString(4, register.getNickName());
+
+
+
+  	      // INSERT文を実行
+
+  	      int result = pStmt.executeUpdate();
+
+
+
+  	      if (result != 1) {
+  	        return false;
+  	      }
+        }catch (URISyntaxException e) {
+            e.printStackTrace();
+            return false;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    } catch (ClassNotFoundException e1) {
+        e1.printStackTrace();
+        return false;
+    }
+    return true;
+    }
+
+
+    public String findprofile(Register inputtingoriginalid) {
+
+	    String originalid= null;
+        try {
+            // ドライバの読み込み。
+        Class.forName ("com.mysql.cj.jdbc.Driver");
+        // データベースへ接続のためprivateメソッドを呼び出す。
+        try(Connection conn = getConnection()) {	      String sql = "SELECT ORIGINALID FROM USER WHERE ORIGINALID =  ?";
+	      PreparedStatement pStmt = conn.prepareStatement(sql);
+	      pStmt.setString(1, inputtingoriginalid.getOriginalid());
+
+	      ResultSet rs = pStmt.executeQuery();
+
+	      if (rs.next()) {
+	    	  originalid = rs.getString("ORIGINALID");
+	    	  }}catch (URISyntaxException e) {
+	              e.printStackTrace();
+	              return null;
+	          } catch (SQLException e) {
+	              e.printStackTrace();
+	              return null;
+	          }
+	      } catch (ClassNotFoundException e1) {
+	          e1.printStackTrace();
+	          return null;
+	      }
+	      return originalid;
+	      }
+
 
 }
