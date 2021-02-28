@@ -1,9 +1,14 @@
-model/Register.class
-dao/UserDAO.class
+model/PostchatLogic.class
 model/RegisterLogic.class
-model/LoginLogic.class
 model/Originalid_Check.class
+model/GetchatLogic.class
 model/Profile.class
 model/Login.class
 servlet/RegisterServlet.class
 servlet/LoginServlet.class
+dao/ChatDao.class
+model/Register.class
+dao/UserDAO.class
+model/Chat.class
+model/LoginLogic.class
+servlet/ChatServlet.class
