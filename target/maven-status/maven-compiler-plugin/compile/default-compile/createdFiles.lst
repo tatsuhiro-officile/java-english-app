@@ -2,6 +2,7 @@ model/PostchatLogic.class
 model/RegisterLogic.class
 model/Originalid_Check.class
 model/GetchatLogic.class
+servlet/MainServlet.class
 model/Profile.class
 model/Login.class
 servlet/RegisterServlet.class
