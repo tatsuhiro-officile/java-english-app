@@ -1,21 +1,17 @@
 package model;
 
 public class Chat {
-	private int id;
-	private String name;
+  private String name;
   private String text;
 
 
-  public Chat(int id,String name,String text) {
-    this.id=id;
+  public Chat(String name,String text) {
+
     this.name=name;
 	this.text = text;
 
   }
 
-  public int getId() {
-    return id;
-  }
   public String getName() {
 	    return name;
   }

@@ -65,9 +65,11 @@ public class ChatServlet extends HttpServlet {
       // セッションスコープに保存されたユーザー情報を取得
       HttpSession session = request.getSession();
       Profile loginUser = (Profile) session.getAttribute("userId");
-      System.out.println(loginUser.getNickName());
+      System.out.println("test");
+
+      System.out.println(loginUser.getId());
       // つぶやきをつぶやきリストに追加
-      Chat mutter = new Chat(loginUser.getId(),loginUser.getNickName(), text);
+      Chat mutter = new Chat(loginUser.getNickName(), text);
       PostchatLogic postMutterLogic = new PostchatLogic();
       postMutterLogic.execute(mutter);
 

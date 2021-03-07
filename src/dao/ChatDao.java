@@ -46,10 +46,10 @@ public class ChatDao {
 
       // SELECT文の結果をArrayListに格納
       while (rs.next()) {
-        int id = rs.getInt("ID");
+
         String userName = rs.getString("NAME");
         String text = rs.getString("TEXT");
-        Chat mutter = new Chat(id, userName, text);
+        Chat mutter = new Chat(userName, text);
         chatList.add(mutter);
       }
     } catch (URISyntaxException e) {

@@ -22,6 +22,10 @@ public class LoginServlet extends HttpServlet {
 
       throws ServletException, IOException {
 
+	  HttpSession session = request.getSession();
+  	String failure ="";
+  	session.setAttribute("failure", failure);
+
     // フォワード
     RequestDispatcher dispatcher = request.getRequestDispatcher(
         "/WEB-INF/jsp/login.jsp");
@@ -47,12 +51,14 @@ public class LoginServlet extends HttpServlet {
     LoginLogic bo = new LoginLogic();
     model.Profile result = bo.execute(login);
 
+    HttpSession session = request.getSession();
+
     // ログイン処理の成否によって処理を分岐
     if (result != null) { // ログイン成功時
 
 
       // セッションスコープにユーザーIDを保存
-      HttpSession session = request.getSession();
+
       session.setAttribute("userId", result);
 
 
@@ -60,10 +66,13 @@ public class LoginServlet extends HttpServlet {
       RequestDispatcher dispatcher =
           request.getRequestDispatcher("MainServlet");
       dispatcher.forward(request, response);
-    } else { // ログイン失敗時
-    // リダイレクト
+    } else {
+
+    	String failure ="登録はありませんでした,ID パスワードをご確認ください";
+    	session.setAttribute("failure", failure);
+
         RequestDispatcher dispatcher =
-                request.getRequestDispatcher("/WEB-INF/jsp/welcome.jsp");
+                request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
             dispatcher.forward(request, response);
     }
   }

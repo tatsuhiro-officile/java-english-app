@@ -1,3 +1,5 @@
+/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/SeisekiUpdateLogoc.java
+/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/User.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/Chat.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/LoginLogic.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/Register.java
@@ -7,9 +9,12 @@
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/RegisterServlet.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/Login.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/GetchatLogic.java
+/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/WelcomeServlet.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/dao/ChatDao.java
+/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/Originalnickname_check.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/dao/UserDAO.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/ChatServlet.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/Profile.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/PostchatLogic.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/RegisterLogic.java
+/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/SelectProblem.java

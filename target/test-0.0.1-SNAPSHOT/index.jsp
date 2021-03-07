@@ -4,18 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>どこつぶ</title>
+<title>英語学習サイト</title>
+<link rel="stylesheet" href="index.css" />
 </head>
 <body>
-<h1>どこつぶへようこそ</h1>
-<form action="Login" method="post">
-ユーザー名：<input type="text" name="name"><br>
-パスワード：<input type="password" name="pass"><br>
-あなたの性別<input type="text" name="sex"><br>
-<input type="submit" value="入る">
+<p class="right"><a href="LoginServlet">ログイン</a>
+<a href="RegisterServlet">新規登録</a></p>
+<h1 class="center">英語学習サイト</h1>
 
-<a href="LoginServlet">ログイン</a>
-<a href="RegisterServlet">登録</a>
-</form>
+
+
+
 </body>
 </html>
