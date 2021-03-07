@@ -25,8 +25,8 @@ public class RegisterServlet extends HttpServlet {
       throws ServletException, IOException {
 
 	  HttpSession session = request.getSession();
+	  session.removeAttribute("duplicateoriginalid");
 	  int registerdone =0;
-
 	  	session.setAttribute("registerdone",registerdone);
 
     // フォワード
@@ -52,6 +52,8 @@ public class RegisterServlet extends HttpServlet {
 
     if((originalid.equals(chekc_space))||(nickname.equals(chekc_space))||(pass.equals(chekc_space))){
     	System.out.println("登録");
+
+    	session.removeAttribute("duplicateoriginalid");
 
 
 

@@ -25,6 +25,7 @@ public class LoginServlet extends HttpServlet {
 	  HttpSession session = request.getSession();
   	String failure ="";
   	session.setAttribute("failure", failure);
+  	System.out.println("失敗のセッションスコープ作成完了");
 
     // フォワード
     RequestDispatcher dispatcher = request.getRequestDispatcher(
@@ -70,6 +71,7 @@ public class LoginServlet extends HttpServlet {
 
     	String failure ="登録はありませんでした,ID パスワードをご確認ください";
     	session.setAttribute("failure", failure);
+    	System.out.println("失敗のセッションスコープ登録完了");
 
         RequestDispatcher dispatcher =
                 request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");
