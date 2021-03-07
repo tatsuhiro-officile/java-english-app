@@ -172,6 +172,7 @@ public class UserDAO {
 
 
 	    String originalnickname= null;
+	    System.out.println("daoentry");
         try {
             // ドライバの読み込み。
         Class.forName ("com.mysql.cj.jdbc.Driver");
@@ -184,11 +185,13 @@ public class UserDAO {
   	      ResultSet rs = pStmt.executeQuery();
 
   	      if (rs.next()) {
-  	    	originalnickname = rs.getString("ORIGINALID");
+  	    	originalnickname = rs.getString("NICKNAME");
 
 
 
   	    }
+  	    System.out.println("sqlからget");
+  	  System.out.println(originalnickname);
 
         }catch (URISyntaxException e) {
 	              e.printStackTrace();
@@ -236,6 +239,7 @@ public class UserDAO {
         e1.printStackTrace();
         return false;
     }
+        System.out.println("return前");
     return true;
     }
 
