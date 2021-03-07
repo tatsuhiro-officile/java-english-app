@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import model.Login;
 import model.LoginLogic;
+import model.Loginfailure;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -23,9 +24,11 @@ public class LoginServlet extends HttpServlet {
       throws ServletException, IOException {
 
 	  HttpSession session = request.getSession();
-  	String failure ="";
-  	session.setAttribute("failure", failure);
-  	System.out.println("失敗のセッションスコープ作成完了");
+  	String failuremassage ="";
+  	Loginfailure loginresult = new Loginfailure(failuremassage);
+  	session.setAttribute("failure", loginresult);
+
+
 
     // フォワード
     RequestDispatcher dispatcher = request.getRequestDispatcher(
@@ -68,10 +71,11 @@ public class LoginServlet extends HttpServlet {
           request.getRequestDispatcher("MainServlet");
       dispatcher.forward(request, response);
     } else {
+    	String failuremassage ="ログインに失敗しました、IDとパスワードをご確認ください";
+    	Loginfailure loginresult = new Loginfailure(failuremassage);
 
-    	String failure ="登録はありませんでした,ID パスワードをご確認ください";
-    	session.setAttribute("failure", failure);
-    	System.out.println("失敗のセッションスコープ登録完了");
+
+    	session.setAttribute("failure", loginresult);
 
         RequestDispatcher dispatcher =
                 request.getRequestDispatcher("/WEB-INF/jsp/login.jsp");

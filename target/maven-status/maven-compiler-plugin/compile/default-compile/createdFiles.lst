@@ -1,3 +1,4 @@
+model/Loginfailure.class
 model/PostchatLogic.class
 model/RegisterLogic.class
 model/Originalid_Check.class
