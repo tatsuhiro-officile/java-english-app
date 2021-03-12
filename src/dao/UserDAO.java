@@ -99,7 +99,7 @@ public class UserDAO {
         Class.forName ("com.mysql.cj.jdbc.Driver");
         // データベースへ接続のためprivateメソッドを呼び出す。
         try(Connection conn = getConnection()) {
-  	      String sql = "INSERT INTO USER3(ORIGINALID,PASS,POINT,NICKNAME) VALUES('?', ?, ?, '?')";
+  	      String sql = "INSERT INTO USER3(ORIGINALID,PASS,POINT,NICKNAME) VALUES(N?, ?, ?,N?)";
   	      PreparedStatement pStmt = conn.prepareStatement(sql);
   	      // INSERT文中の「?」に使用する値を設定しSQLを完成
   	      pStmt.setString(1, register.getOriginalid());
