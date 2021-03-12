@@ -143,8 +143,6 @@ public class ProblemServlet extends HttpServlet {
 
 
 
-	  request.setCharacterEncoding("UTF-8");
-
 
 		if (loginUser == null) { // ログインしていない
     // リダイレクト
@@ -170,6 +168,8 @@ public class ProblemServlet extends HttpServlet {
   protected void doPost(HttpServletRequest request,
       HttpServletResponse response)
       throws ServletException, IOException {
+
+	  request.setCharacterEncoding("UTF-8");
 
 	  HttpSession session = request.getSession();
 

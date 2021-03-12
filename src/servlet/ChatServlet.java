@@ -69,6 +69,7 @@ public class ChatServlet extends HttpServlet {
       HttpServletResponse response)
       throws ServletException, IOException {
 
+
     // リクエストパラメータの取得
     request.setCharacterEncoding("UTF-8");
 

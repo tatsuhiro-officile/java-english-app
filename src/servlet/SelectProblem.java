@@ -18,6 +18,8 @@ public class SelectProblem extends HttpServlet {
       HttpServletResponse response)
       throws ServletException, IOException {
 
+	  request.setCharacterEncoding("UTF-8");
+
 	  HttpSession session = request.getSession();
 
 	  session.removeAttribute("mondaisuu");

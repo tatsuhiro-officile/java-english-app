@@ -18,6 +18,8 @@ public class MainServlet extends HttpServlet {
       HttpServletResponse response)
       throws ServletException, IOException {
 
+	  request.setCharacterEncoding("UTF-8");
+
     RequestDispatcher dispatcher = request.getRequestDispatcher(
         "/WEB-INF/jsp/main.jsp");
     dispatcher.forward(request, response);

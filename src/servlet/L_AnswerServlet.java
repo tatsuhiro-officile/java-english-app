@@ -32,6 +32,8 @@ public class L_AnswerServlet extends HttpServlet {
       HttpServletResponse response)
       throws ServletException, IOException {
 
+	  request.setCharacterEncoding("UTF-8");
+
 
     // リクエストパラメータの取得
 
