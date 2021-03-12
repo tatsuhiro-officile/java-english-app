@@ -15,6 +15,7 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 <title>Insert title here</title>
 </head>
 <body>
+<% request.setCharacterEncoding("UTF-8"); %>
 <p class="center">ようこそ<c:out value="${userId.getNickName()}" />さん</p>
 
 <div class="centering-block">
