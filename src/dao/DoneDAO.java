@@ -35,7 +35,7 @@ public class DoneDAO{
             Class.forName ("com.mysql.cj.jdbc.Driver");
             // データベースへ接続のためprivateメソッドを呼び出す。
             try(Connection conn = getConnection()) {
-                String sql = "SELECT ORIGINALID,LISTNING,READING,WRITEING FROM DONE WHERE ORIGINALID = ?";
+                String sql = "SELECT ORIGINALID,LISTNING,READING,WRITEING FROM DONE2 WHERE ORIGINALID = ?";
                 PreparedStatement pStmt = conn.prepareStatement(sql);
                 pStmt.setString(1, profile.getOriginalid());
 
@@ -84,7 +84,7 @@ public class DoneDAO{
         try(Connection conn = getConnection()) {
 
   	      // INSERT文の準備(idは自動連番なので指定しなくてよい）
-  	      String sql = "INSERT INTO DONE(ORIGINALID) VALUES(?)";
+  	      String sql = "INSERT INTO DONE2(ORIGINALID) VALUES(?)";
   	      PreparedStatement pStmt = conn.prepareStatement(sql);
   	      // INSERT文中の「?」に使用する値を設定しSQLを完成
   	      pStmt.setString(1, originalid);

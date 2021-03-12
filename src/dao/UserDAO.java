@@ -38,7 +38,7 @@ public class UserDAO {
             try(Connection conn = getConnection()) {
 
                 String sql = "SELECT ORIGINALID, PASS, POINT,NICKNAME,PROBLEM1,PROBLEM2,PROBLEM3,PROBLEM4,PROBLEM5,PROBLEM6,PROBLEM7,PROBLEM8,PROBLEM9,PROBLEM10,PROBLEM11,PROBLEM12"
-                  		+ " FROM USER WHERE ORIGINALID = ? AND PASS = ?";
+                  		+ " FROM USER2 WHERE ORIGINALID = ? AND PASS = ?";
                   PreparedStatement pStmt = conn.prepareStatement(sql);
                   pStmt.setString(1, login.getOriginalid());
                   pStmt.setString(2, login.getpassword());
@@ -99,7 +99,7 @@ public class UserDAO {
         Class.forName ("com.mysql.cj.jdbc.Driver");
         // データベースへ接続のためprivateメソッドを呼び出す。
         try(Connection conn = getConnection()) {
-  	      String sql = "INSERT INTO USER(ORIGINALID,PASS,POINT,NICKNAME) VALUES(?, ?, ?, ?)";
+  	      String sql = "INSERT INTO USER2(ORIGINALID,PASS,POINT,NICKNAME) VALUES(?, ?, ?, ?)";
   	      PreparedStatement pStmt = conn.prepareStatement(sql);
   	      // INSERT文中の「?」に使用する値を設定しSQLを完成
   	      pStmt.setString(1, register.getOriginalid());
@@ -141,7 +141,7 @@ public class UserDAO {
         Class.forName ("com.mysql.cj.jdbc.Driver");
         // データベースへ接続のためprivateメソッドを呼び出す。
         try(Connection conn = getConnection()) {
-            String sql = "SELECT ORIGINALID FROM USER WHERE ORIGINALID =  ?";
+            String sql = "SELECT ORIGINALID FROM USER2 WHERE ORIGINALID =  ?";
   	      PreparedStatement pStmt = conn.prepareStatement(sql);
   	      pStmt.setString(1, inputtingoriginalid.getOriginalid());
 
@@ -176,7 +176,7 @@ public class UserDAO {
         Class.forName ("com.mysql.cj.jdbc.Driver");
         // データベースへ接続のためprivateメソッドを呼び出す。
         try(Connection conn = getConnection()) {
-		      String sql = "SELECT NICKNAME FROM USER WHERE NICKNAME =  ?";
+		      String sql = "SELECT NICKNAME FROM USER2 WHERE NICKNAME =  ?";
 		      PreparedStatement pStmt = conn.prepareStatement(sql);
 		      pStmt.setString(1, inputtingnicikname.getNickName());
 

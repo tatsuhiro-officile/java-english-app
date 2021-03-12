@@ -8,7 +8,7 @@ public class SeisekiUpdateLogoc {
 		    String columnlevel = String.valueOf(level);
 		    String chengecolumn = "PROBLEM" + columnlevel;
 
-		    String inputsql = "UPDATE USER SET "+ chengecolumn +
+		    String inputsql = "UPDATE USER2 SET "+ chengecolumn +
 		    		"=1 WHERE  ORIGINALID=" + '\'' +mooji.getOriginalid() +
 		    		'\'';
 

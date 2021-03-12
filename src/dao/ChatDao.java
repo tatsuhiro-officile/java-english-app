@@ -36,7 +36,7 @@ public class ChatDao {
             // データベースへ接続のためprivateメソッドを呼び出す。
             try(Connection conn = getConnection()) {
                 String sql =
-                        "SELECT ID,NAME,TEXT,TIME FROM MUTTER ORDER BY ID DESC";
+                        "SELECT ID,NAME,TEXT,TIME FROM MUTTER2 ORDER BY ID DESC";
                     PreparedStatement pStmt = conn.prepareStatement(sql);
 
                     // SELECTを実行
@@ -77,7 +77,7 @@ public class ChatDao {
             Class.forName ("com.mysql.cj.jdbc.Driver");
             // データベースへ接続のためprivateメソッドを呼び出す。
             try(Connection conn = getConnection()) {
-                String sql = "INSERT INTO MUTTER(NAME, TEXT,TIME) VALUES(?,?,?)";
+                String sql = "INSERT INTO MUTTER2(NAME, TEXT,TIME) VALUES(?,?,?)";
                 PreparedStatement pStmt = conn.prepareStatement(sql);
                 // INSERT文中の「?」に使用する値を設定しSQLを完成
                 pStmt.setString(1, chat.getName());

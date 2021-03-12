@@ -24,7 +24,7 @@ public class Done_update_Logic{
 	      }
 
 
-		    String inputsql = "UPDATE DONE SET "+ inputting +
+		    String inputsql = "UPDATE DONE2 SET "+ inputting +
 		    		" = " +inputting + "+ 1 WHERE  ORIGINALID=" + '\'' + mooji +'\'';
 		    System.out.println(inputsql);
 
