@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Done;
+import model.Done_register_Logic;
 import model.Originalid_Check;
 import model.Originalnickname_check;
 import model.Profile;
@@ -25,8 +27,8 @@ public class RegisterServlet extends HttpServlet {
       throws ServletException, IOException {
 
 	  HttpSession session = request.getSession();
-	  session.removeAttribute("duplicateoriginalid");
 	  int registerdone =0;
+
 	  	session.setAttribute("registerdone",registerdone);
 
     // フォワード
@@ -52,8 +54,6 @@ public class RegisterServlet extends HttpServlet {
 
     if((originalid.equals(chekc_space))||(nickname.equals(chekc_space))||(pass.equals(chekc_space))){
     	System.out.println("登録");
-
-    	session.removeAttribute("duplicateoriginalid");
 
 
 
@@ -81,6 +81,7 @@ public class RegisterServlet extends HttpServlet {
     		dispatcher.forward(request, response);
             }
     	else if(!(originalniciknameresult==null)) {
+    		System.out.println("ifok");
     		int registerdone=  (int) session.getAttribute("registerdone");
     		registerdone=1;
 
@@ -112,6 +113,14 @@ public class RegisterServlet extends HttpServlet {
     		problem7,problem8,problem9,problem10,problem11,problem12);
     		session.setAttribute("userId",profile);
     		int registerdone=  (int) session.getAttribute("registerdone");
+
+    		Done done = new Done(originalid,0,0,0);
+    		Done_register_Logic done_register_Logic = new Done_register_Logic();
+
+    		done_register_Logic.create(originalid);
+
+    		session.setAttribute("done",done);
+
     		registerdone=1;
     		session.setAttribute("registerdone",registerdone);
 

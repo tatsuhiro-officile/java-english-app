@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,7 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import model.Chat;
+import model.Done;
+import model.DoneLogic;
+import model.Done_update_Logic;
 import model.GetchatLogic;
+import model.Point_update_Logic;
 import model.PostchatLogic;
 import model.Profile;
 
@@ -32,11 +38,22 @@ public class ChatServlet extends HttpServlet {
     List<Chat> chatList = getMutterListLogic.execute();
     request.setAttribute("chatList", chatList);
 
+
     // ログインしているか確認するため
     // セッションスコープからユーザー情報を取得
     HttpSession session = request.getSession();
+
     Profile loginUser = (Profile) session.getAttribute("userId");
-    System.out.println("セッションスコープから情報取得");
+
+	DoneLogic donelogic = new DoneLogic();
+	Done done= donelogic.select_done(loginUser);
+
+
+	session.setAttribute("done", done);
+
+
+
+
     if (loginUser == null) { // ログインしていない
     // リダイレクト
       response.sendRedirect("/application2/");
@@ -54,39 +71,87 @@ public class ChatServlet extends HttpServlet {
 
     // リクエストパラメータの取得
     request.setCharacterEncoding("UTF-8");
+
     String text = request.getParameter("text");
 
-    System.out.println("text確認");
+    HttpSession session = request.getSession();
 
-    // 入力値チェック
-    if (text != null && text.length() != 0) {
+    Done done = (Done) session.getAttribute("done");
 
 
-      // セッションスコープに保存されたユーザー情報を取得
-      HttpSession session = request.getSession();
-      Profile loginUser = (Profile) session.getAttribute("userId");
-      System.out.println("test");
+    int effort = done.getListning() + done.getReading() + done.getWriteing();
 
-      System.out.println(loginUser.getId());
+
+
+	if(done.getListning()>0) {
+		text = text + " "+"リスニング達成";
+
+	}
+	if(done.getReading()>0) {
+		text = text + " "+"リーディング達成";
+
+	}
+	if(done.getWriteing()>0) {
+		text = text + " "+"ライティング達成";
+
+	}
+
+
+
+
+    		if(effort>0) {
+
+
+    			Profile loginUser = (Profile) session.getAttribute("userId");
+    			LocalDateTime localDateTime = LocalDateTime.now();
+    			DateTimeFormatter datetimeformatter = DateTimeFormatter.ofPattern("yyyy/MM/dd/ HH:mm:ss");
+    			String datetimeformated = datetimeformatter.format(localDateTime);
       // つぶやきをつぶやきリストに追加
-      Chat mutter = new Chat(loginUser.getNickName(), text);
-      PostchatLogic postMutterLogic = new PostchatLogic();
-      postMutterLogic.execute(mutter);
+    			Chat mutter = new Chat(loginUser.getNickName(), text,datetimeformated);
+    			PostchatLogic postMutterLogic = new PostchatLogic();
+    			postMutterLogic.execute(mutter);
+    			Point_update_Logic point_update_Logic = new Point_update_Logic();
+    			Profile profile = point_update_Logic.execute(loginUser);
+    			session.setAttribute("userId",profile);
 
-    } else {
-      // エラーメッセージをリクエストスコープに保存
-      request.setAttribute("errorMsg2",
-          "本当に女性？");
-    }
-    // つぶやきリストを取得して、リクエストスコープに保存
-    GetchatLogic getMutterListLogic =
-        new GetchatLogic();
-    List<Chat> chatList = getMutterListLogic.execute();
-    request.setAttribute("chatList", chatList);
+    			Done_update_Logic done_update_logic = new Done_update_Logic();
+    			done_update_logic.clear(loginUser);
+
+
+
+
+
+
+    			Done resetdone = new Done(loginUser.getOriginalid(),0,0,0);
+
+    			session.setAttribute("done",resetdone);
+    			session.setAttribute("userId",profile);
+
+
+
+
+
+        	} else {
+
+            // エラーメッセージをリクエストスコープに保存
+        		request.setAttribute("errorMsg2",
+                "学習が達成されていません");
+        	}
+
+
+
+
+    	GetchatLogic getMutterListLogic =
+    			new GetchatLogic();
+    	List<Chat> chatList = getMutterListLogic.execute();
+    	request.setAttribute("chatList", chatList);
 
     // フォワード
-    RequestDispatcher dispatcher = request.getRequestDispatcher(
+    	RequestDispatcher dispatcher = request.getRequestDispatcher(
         "/WEB-INF/jsp/chat.jsp");
-    dispatcher.forward(request, response);
+    	dispatcher.forward(request, response);
   }
-}
+  }
+
+
+

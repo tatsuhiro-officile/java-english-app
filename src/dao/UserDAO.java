@@ -36,7 +36,7 @@ public class UserDAO {
             Class.forName ("com.mysql.cj.jdbc.Driver");
             // データベースへ接続のためprivateメソッドを呼び出す。
             try(Connection conn = getConnection()) {
-                // SELECT文を準備。
+
                 String sql = "SELECT ORIGINALID, PASS, POINT,NICKNAME,PROBLEM1,PROBLEM2,PROBLEM3,PROBLEM4,PROBLEM5,PROBLEM6,PROBLEM7,PROBLEM8,PROBLEM9,PROBLEM10,PROBLEM11,PROBLEM12"
                   		+ " FROM USER WHERE ORIGINALID = ? AND PASS = ?";
                   PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -77,6 +77,7 @@ public class UserDAO {
                     		problem2,problem3,problem4,problem5,problem6,problem7,
                     		problem8,problem9,problem10,problem11,problem12
                     		);
+
                   }
             } catch (URISyntaxException e) {
                 e.printStackTrace();
@@ -98,7 +99,6 @@ public class UserDAO {
         Class.forName ("com.mysql.cj.jdbc.Driver");
         // データベースへ接続のためprivateメソッドを呼び出す。
         try(Connection conn = getConnection()) {
-
   	      String sql = "INSERT INTO USER(ORIGINALID,PASS,POINT,NICKNAME) VALUES(?, ?, ?, ?)";
   	      PreparedStatement pStmt = conn.prepareStatement(sql);
   	      // INSERT文中の「?」に使用する値を設定しSQLを完成
@@ -117,7 +117,6 @@ public class UserDAO {
 
   	      if (result != 1) {
   	        return false;
-
   	      }
         }catch (URISyntaxException e) {
             e.printStackTrace();
@@ -142,7 +141,7 @@ public class UserDAO {
         Class.forName ("com.mysql.cj.jdbc.Driver");
         // データベースへ接続のためprivateメソッドを呼び出す。
         try(Connection conn = getConnection()) {
-  	      String sql = "SELECT ORIGINALID FROM USER WHERE ORIGINALID =  ?";
+            String sql = "SELECT ORIGINALID FROM USER WHERE ORIGINALID =  ?";
   	      PreparedStatement pStmt = conn.prepareStatement(sql);
   	      pStmt.setString(1, inputtingoriginalid.getOriginalid());
 
@@ -150,7 +149,6 @@ public class UserDAO {
 
   	      if (rs.next()) {
   	    	  originalid = rs.getString("ORIGINALID");
-
 
 
   	    }
@@ -178,14 +176,19 @@ public class UserDAO {
         Class.forName ("com.mysql.cj.jdbc.Driver");
         // データベースへ接続のためprivateメソッドを呼び出す。
         try(Connection conn = getConnection()) {
-		  String sql = "SELECT NICKNAME FROM USER WHERE NICKNAME =  ?";
-		  PreparedStatement pStmt = conn.prepareStatement(sql);
-		  pStmt.setString(1, inputtingnicikname.getNickName());
+		      String sql = "SELECT NICKNAME FROM USER WHERE NICKNAME =  ?";
+		      PreparedStatement pStmt = conn.prepareStatement(sql);
+		      pStmt.setString(1, inputtingnicikname.getNickName());
 
-  	      ResultSet rs = pStmt.executeQuery();
+		      ResultSet rs = pStmt.executeQuery();
 
-  	      if (rs.next()) {
-  	    	originalnickname = rs.getString("NICKNAME");
+		      if (rs.next()) {
+		    	  originalnickname = rs.getString("NICKNAME");
+
+
+
+		      // SELECTを実行し、結果表を取得
+
 
 
 
@@ -213,20 +216,19 @@ public class UserDAO {
         Class.forName ("com.mysql.cj.jdbc.Driver");
         // データベースへ接続のためprivateメソッドを呼び出す。
         try(Connection conn = getConnection()) {
+  	      String sql = test;
+	      System.out.println(sql);
+	      PreparedStatement pStmt = conn.prepareStatement(sql);
+	      // INSERT文中の「?」に使用する値を設定しSQLを完成
+	//      pStmt.setString(1, coulumn);
+	 //     pStmt.setString(2, originalid.getOriginalid());
 
-		      String sql = test;
-		      System.out.println(sql);
-		      PreparedStatement pStmt = conn.prepareStatement(sql);
-		      // INSERT文中の「?」に使用する値を設定しSQLを完成
-		//      pStmt.setString(1, coulumn);
-		 //     pStmt.setString(2, originalid.getOriginalid());
+	      // INSERT文を実行
+	      int result = pStmt.executeUpdate();
 
-		      // INSERT文を実行
-		      int result = pStmt.executeUpdate();
-
-		      if (result != 1) {
-		        return false;
-		      }
+	      if (result != 1) {
+	        return false;
+	      }
 
         }catch (URISyntaxException e) {
             e.printStackTrace();
@@ -242,6 +244,53 @@ public class UserDAO {
         System.out.println("return前");
     return true;
     }
+
+    public int point_update(Profile register) {
+
+        int point;
+        try {
+            // ドライバの読み込み。
+        Class.forName ("com.mysql.cj.jdbc.Driver");
+        // データベースへ接続のためprivateメソッドを呼び出す。
+        try(Connection conn = getConnection()) {
+
+
+		      // INSERT文の準備(idは自動連番なので指定しなくてよい）
+		      String sql = "UPDATE USER SET POINT=? WHERE ORIGINALID=?;";
+		      PreparedStatement pStmt = conn.prepareStatement(sql);
+
+		      point =register.getPoint()+1;
+
+		      pStmt.setLong(1,point);
+		      pStmt.setString(2, register.getOriginalid());
+
+
+
+		      // INSERT文を実行
+
+		      int result = pStmt.executeUpdate();
+
+
+
+		      if (result != 1) {
+		        return 0;
+		      }
+
+        }catch (URISyntaxException e) {
+            e.printStackTrace();
+            return 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    } catch (ClassNotFoundException e1) {
+        e1.printStackTrace();
+        return 0;
+    }
+        System.out.println("return前");
+    return point;
+    }
+
 
 
 }

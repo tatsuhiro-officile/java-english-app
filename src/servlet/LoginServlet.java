@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Done;
+import model.DoneLogic;
 import model.Login;
 import model.LoginLogic;
 import model.Loginfailure;
@@ -27,6 +29,7 @@ public class LoginServlet extends HttpServlet {
   	String failuremassage ="";
   	Loginfailure loginresult = new Loginfailure(failuremassage);
   	session.setAttribute("failure", loginresult);
+
 
 
 
@@ -59,9 +62,16 @@ public class LoginServlet extends HttpServlet {
 
     // ログイン処理の成否によって処理を分岐
     if (result != null) { // ログイン成功時
+    	DoneLogic donelogic = new DoneLogic();
+    	Done done= donelogic.select_done(result);
 
 
-      // セッションスコープにユーザーIDを保存
+    	session.setAttribute("done", done);
+
+
+
+
+
 
       session.setAttribute("userId", result);
 

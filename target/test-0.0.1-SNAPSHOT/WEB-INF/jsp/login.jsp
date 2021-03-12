@@ -8,9 +8,10 @@
 <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-
+ログイン
 <div class="centering-block">
  <div class="centering-block-inner">
+
 <form action="LoginServlet" method="post">
 &nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="originalid"><br>
 パスワード<input type="password" name="pass"><br>

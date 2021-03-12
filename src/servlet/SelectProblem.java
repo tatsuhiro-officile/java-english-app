@@ -28,6 +28,7 @@ public class SelectProblem extends HttpServlet {
 	  session.setAttribute("startstop",startstop);
 
 
+
 	    String getlevel = request.getParameter("select_problem");
 	    int word = Integer.parseInt(getlevel);
 	    session.setAttribute("getlevel", word);
@@ -35,52 +36,51 @@ public class SelectProblem extends HttpServlet {
 	    int problemnumber;
 
 
-	    if(word>0) {
 
 
-	    switch(word){
-	    case 1:
-	    	problemnumber=0;
-	    	session.setAttribute("problemnumber", problemnumber);
-	    	break;
-	    case 2:
-	    	problemnumber=20;
-	    	session.setAttribute("problemnumber", problemnumber);
-	    	break;
-	    case 3:
-	    	problemnumber=40;
-	    	session.setAttribute("problemnumber", problemnumber);
-	    	break;
-	    case 7:
-	    	problemnumber=0;
-	    	session.setAttribute("problemnumber", problemnumber);
-	    	break;
+	    	switch(word){
+	    		case 1:
+	    			problemnumber=0;
+	    			session.setAttribute("problemnumber", problemnumber);
+	    			break;
+	    		case 2:
+	    			problemnumber=21;
+	    			session.setAttribute("problemnumber", problemnumber);
+	    			break;
+	    		case 3:
+	    			problemnumber=41;
+	    			session.setAttribute("problemnumber", problemnumber);
+	    			break;
+	    		case 7:
+	    			problemnumber=0;
+	    			session.setAttribute("problemnumber", problemnumber);
+	    			break;
+	    		case 8:
+	    			problemnumber=21;
+	    			session.setAttribute("problemnumber", problemnumber);
+	    			break;
 	    	}
-	    int seikaisuu =0;
-	    int mondaisuu=0;
-	    int machigai =0;
 
-	    session.setAttribute("seikaisuu", seikaisuu);
-	    session.setAttribute("machigai", machigai);
-	    session.setAttribute("mondaisuu", mondaisuu);
-	    RequestDispatcher dispatcher = request.getRequestDispatcher(
-	            "/WEB-INF/jsp/problem.jsp");
-	        dispatcher.forward(request, response);
+	    	int seikaisuu =0;
+	    	int mondaisuu=0;
+	    	int machigai =0;
 
-	    }
+	    	session.setAttribute("seikaisuu", seikaisuu);
+	    	session.setAttribute("machigai", machigai);
+	    	session.setAttribute("mondaisuu", mondaisuu);
 
-
+	    	RequestDispatcher dispatcher = request.getRequestDispatcher(
+	    			"/WEB-INF/jsp/problem.jsp");
+	        	dispatcher.forward(request, response);
 
 
-    RequestDispatcher dispatcher = request.getRequestDispatcher(
-        "/WEB-INF/jsp/selectproblem.jsp");
-    dispatcher.forward(request, response);
   }
 
 
   protected void doGet(HttpServletRequest request,
       HttpServletResponse response)
       throws ServletException, IOException {
+
 
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(
 	            "/WEB-INF/jsp/selectproblem.jsp");

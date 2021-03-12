@@ -29,11 +29,11 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 <option value=5>ビジネス英語1</option>
 <option value=6>基礎英語4</option>
 <option value=7>基礎英語1リスニング</option>
-<option value=2>基礎英語2リスニング</option>
-<option value=3>基礎英語3リスニング1</option>
-<option value=4>旅行英語1リスニング</option>
-<option value=5>ビジネス英語1リスニング</option>
-<option value=6>基礎英語4リスニング</option>
+<option value=8>基礎英語2リスニング</option>
+<option value=9>基礎英語3リスニング1</option>
+<option value=10>旅行英語1リスニング</option>
+<option value=11>ビジネス英語1リスニング</option>
+<option value=12>基礎英語4リスニング</option>
 </select>
 </p>
 

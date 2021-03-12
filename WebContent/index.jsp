@@ -10,7 +10,35 @@
 <body>
 <p class="right"><a href="LoginServlet">ログイン</a>
 <a href="RegisterServlet">新規登録</a></p>
-<h1 class="center">英語学習サイト</h1>
+<h1 class="center">英語脳作り</h1>
+<div class ="center">
+<p>３つの視点から軸からトレーニングが出来る!</p>
+<p>Reading / リーディング</p>
+<p>Listening / リスニング</p>
+
+<p>riting / ライティング</p>
+
+慣れたら、リスニングで、シャドーインにも出来る！
+</div>
+<div>
+<p class ="center">学習報告でモチベーションアップ</p>
+<p class ="center">繰り返しで、英語の脳を作ろう！！</P>
+<p class ="center">簡単な英語からちょっとづつ自信をつけていける！</p>
+</div>
+
+
+
+
+
+
+
+
+
+<img src="index.jpg" alt="hi" title="TOP画像">
+
+
+
+
 
 
 

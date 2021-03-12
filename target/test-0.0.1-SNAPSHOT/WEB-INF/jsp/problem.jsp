@@ -132,7 +132,7 @@ _____________
 <c:if test="${machigai>0}">
 <%= mondaisuu%>中<%= seikaisuu%>正解<br><br><br>
 
-<c:forEach var="i" begin="0" end="${machigai}" step="1">
+<c:forEach var="i" begin="0" end="<%= machigaisuu%>" step="1">
 ------------------------------------------<br>
 間違え:<c:out value="${machigailist[i].no3}"/><br>
 正解:<c:out value="${kaitoulist[i].no3}"/><br>
