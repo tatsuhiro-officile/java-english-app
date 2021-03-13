@@ -51,6 +51,7 @@ public class RegisterServlet extends HttpServlet {
     String chekc_space="";
     int point =0;
     HttpSession session = request.getSession();
+    System.out.println(nickname+"ニックネームpost");
 
     if((originalid.equals(chekc_space))||(nickname.equals(chekc_space))||(pass.equals(chekc_space))){
     	System.out.println("登録");
@@ -71,6 +72,8 @@ public class RegisterServlet extends HttpServlet {
     	String originalidresult= originalid_check.originalid_check(register);
     	Originalnickname_check Originalnickname_check = new Originalnickname_check();
     	String originalniciknameresult= Originalnickname_check.originalnicikname_check(register);
+
+    	System.out.println("ニックネームrちぇっく");
     	if(!(originalidresult==null)){
     		int registerdone=  (int) session.getAttribute("registerdone");
     		registerdone=1;
