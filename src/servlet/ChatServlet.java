@@ -18,7 +18,6 @@ import model.Done;
 import model.DoneLogic;
 import model.Done_update_Logic;
 import model.GetchatLogic;
-import model.Point_update_Logic;
 import model.PostchatLogic;
 import model.Profile;
 
@@ -111,9 +110,7 @@ public class ChatServlet extends HttpServlet {
     			Chat mutter = new Chat(loginUser.getNickName(), text,datetimeformated);
     			PostchatLogic postMutterLogic = new PostchatLogic();
     			postMutterLogic.execute(mutter);
-    			Point_update_Logic point_update_Logic = new Point_update_Logic();
-    			Profile profile = point_update_Logic.execute(loginUser);
-    			session.setAttribute("userId",profile);
+
 
     			Done_update_Logic done_update_logic = new Done_update_Logic();
     			done_update_logic.clear(loginUser);
@@ -126,7 +123,7 @@ public class ChatServlet extends HttpServlet {
     			Done resetdone = new Done(loginUser.getOriginalid(),0,0,0);
 
     			session.setAttribute("done",resetdone);
-    			session.setAttribute("userId",profile);
+
 
 
 

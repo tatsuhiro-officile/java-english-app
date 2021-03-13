@@ -33,8 +33,7 @@
 
 
 
-
-<img src="index.jpg" alt="hi" title="TOP画像">
+<img src="${pageContext.request.contextPath}/pic/index.jpg" alt="リスト">
 
 
 

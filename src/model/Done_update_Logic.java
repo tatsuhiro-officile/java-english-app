@@ -41,7 +41,7 @@ public class Done_update_Logic{
 
 
 
-		    String inputsql =  "UPDATE DONE SET LISTNING=0 ,READING=0,WRITEING=0 WHERE ORIGINALID=" +
+		    String inputsql =  "UPDATE DONE2 SET LISTNING=0 ,READING=0,WRITEING=0 WHERE ORIGINALID=" +
 		    '\'' + originalid +'\'';
 
 
