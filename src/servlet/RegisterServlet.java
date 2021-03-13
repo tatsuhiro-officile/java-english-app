@@ -54,7 +54,7 @@ public class RegisterServlet extends HttpServlet {
     System.out.println(nickname+"ニックネームpost");
 
     if((originalid.equals(chekc_space))||(nickname.equals(chekc_space))||(pass.equals(chekc_space))){
-    	System.out.println("登録");
+
 
 
 
@@ -65,7 +65,7 @@ public class RegisterServlet extends HttpServlet {
         RequestDispatcher dispatcher = request.
         getRequestDispatcher("/WEB-INF/jsp/register.jsp");
         dispatcher.forward(request, response);
-        System.out.println("登録1");
+
     }else {
     	Register register = new Register(originalid,nickname,pass,point);
     	Originalid_Check originalid_check = new Originalid_Check();
@@ -84,7 +84,7 @@ public class RegisterServlet extends HttpServlet {
     		dispatcher.forward(request, response);
             }
     	else if(!(originalniciknameresult==null)) {
-    		System.out.println("ifok");
+    		System.out.println("ニックネームは既に登録がある");
     		int registerdone=  (int) session.getAttribute("registerdone");
     		registerdone=1;
 
@@ -96,6 +96,7 @@ public class RegisterServlet extends HttpServlet {
 
     	}else{
     		System.out.println("危険");
+    		System.out.println(nickname+"登録前のニックネーム");
     		RegisterLogic registerlogic = new RegisterLogic();
     		boolean result =registerlogic.execute(register);
     		if(result==true) {
@@ -111,6 +112,8 @@ public class RegisterServlet extends HttpServlet {
     		int problem10=0;
     		int problem11=0;
     		int problem12=0;
+
+
     		Profile profile = new Profile(originalid,nickname,pass,point,
     		problem1,problem2,problem3,problem4,problem5,problem6,
     		problem7,problem8,problem9,problem10,problem11,problem12);

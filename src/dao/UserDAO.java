@@ -107,6 +107,8 @@ public class UserDAO {
   	      pStmt.setLong(3, register.getPoint());
   	      pStmt.setString(4, register.getNickName());
 
+  	      System.out.println("dao登録ニックネーム"+register.getNickName());
+
 
 
   	      // INSERT文を実行
@@ -170,7 +172,7 @@ public class UserDAO {
 
 
 	    String originalnickname= null;
-	    System.out.println("daoentry");
+
         try {
             // ドライバの読み込み。
         Class.forName ("com.mysql.cj.jdbc.Driver");
@@ -179,6 +181,8 @@ public class UserDAO {
 		      String sql = "SELECT NICKNAME FROM USER3 WHERE NICKNAME =  ?";
 		      PreparedStatement pStmt = conn.prepareStatement(sql);
 		      pStmt.setString(1, inputtingnicikname.getNickName());
+
+		      System.out.println("findnickname"+inputtingnicikname.getNickName());
 
 		      ResultSet rs = pStmt.executeQuery();
 
@@ -193,8 +197,7 @@ public class UserDAO {
 
 
   	    }
-  	    System.out.println("sqlからget");
-  	  System.out.println(originalnickname);
+
 
         }catch (URISyntaxException e) {
 	              e.printStackTrace();
