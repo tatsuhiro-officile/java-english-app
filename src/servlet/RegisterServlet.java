@@ -43,7 +43,7 @@ public class RegisterServlet extends HttpServlet {
       throws ServletException, IOException {
 
     // リクエストパラメータの取得
-
+    request.setCharacterEncoding("UTF-8");
     String originalid = request.getParameter("ORIGINALID");
 
     String pass = request.getParameter("PASS");
