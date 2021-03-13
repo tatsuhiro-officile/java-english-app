@@ -15,6 +15,26 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 <link rel="stylesheet" href="index.css" />
 </head>
 <body>
+
+<div class="flex">
+<div class="flex__inner">
+<p>English brain</p>
+<p><img src="${pageContext.request.contextPath}/pic/brain.jpeg" alt="リスト" class ="img_icon">
+
+</div>
+<div class="flex__inner">
+<p><a href="MainServlet">Main</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p><a href="CheckproblemServret">Reading</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="SelectProblem">Writing・Listening</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="ChatServlet">みんなの学習記録</a></p>
+
+</div>
+</div>
+<hr>
+
 <div class="centering-block">
  <div class="centering-block-inner">
 <form action="SelectProblem" method="post">
@@ -37,8 +57,10 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 </select>
 </p>
 
+
 <p><input type="submit" value="送信する"></p>
 </form>
+
 
 
 <p>
@@ -138,6 +160,7 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 </p>
 </div>
 </div>
+
 
 
 </body>

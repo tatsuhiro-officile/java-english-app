@@ -5,17 +5,33 @@
 <head>
 <meta charset="UTF-8">
 <title>どこつぶ</title>
+<link rel="stylesheet" href="index.css" />
 </head>
 <body>
-<h1>どこつぶメイン</h1>
-<p>
-<c:out value="${userId.nickName}" />さん、ログイン中
-<a href="MainServlet">戻る</a>
-</p>
 
+<div class="flex">
+<div class="flex__inner">
+<p>English brain</p>
+<p><img src="${pageContext.request.contextPath}/pic/brain.jpeg" alt="リスト" class ="img_icon">
+
+</div>
+<div class="flex__inner">
+<p><a href="MainServlet">Main</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p><a href="CheckproblemServret">Reading</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="SelectProblem">Writing・Listening</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="ChatServlet">みんなの学習記録</a></p>
+
+</div>
+</div>
+<hr>
+
+<div class="center">
 <c:if test="${problemview==0}">
 <form action="CheckproblemServret" method="post">
-<p>
+<p>リーディングを行う問題を選択してください</p>
 <select name="select_problem">
 <option value=1>基礎英語1</option>
 <option value=2>基礎英語2</option>
@@ -25,13 +41,14 @@
 <option value=6>基礎英語4</option>
 </select>
 <input type="hidden" name="problemview" value=1>
-</p>
+
 <p><input type="submit" value="確認開始"></p>
 </form>
 
 </c:if>
+</div>
 
-
+<div class="center">
 <c:if test="${problemview>0}">
 <c:out value="${mondainumber+1}" />問目
 <c:out value="${checklist[mondainumber].no1}" />
@@ -88,7 +105,8 @@
 <p><input type="submit" value="日本語確認"></p>
 </form>
 </c:if>
-
+</div>
+<div class="center">
 <c:if test="${problemview==2}">
 <c:out value="${checklist[mondainumber].japanese}" />
 <form action="CheckproblemServret" method="post">
@@ -99,6 +117,7 @@
 <c:if test="${checkfinal==1}">
 終了！
 </c:if>
+</div>
 
 </body>
 </html>

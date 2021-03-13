@@ -8,22 +8,32 @@
 <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-<p class="right"><a href="LoginServlet">ログイン</a>
-<a href="RegisterServlet">新規登録</a></p>
-<h1 class="center">英語脳作り</h1>
+<div class="flex">
+<div class="flex__inner">
+<p>English brain</p>
+<p><img src="${pageContext.request.contextPath}/pic/brain.jpeg" alt="リスト" class ="img_icon">
+
+
+</div>
+<div class="flex__inner">
+<p><a href="RegisterServlet">新規登録</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p><a href="LoginServlet">ログイン</a></p>
+</div>
+</div>
+
+<div class ="colored">
+<h1 class="center">繰り返し行う英語脳作り</h1>
+</div>
+
+
+
 <div class ="center">
-<p>３つの視点から軸からトレーニングが出来る!</p>
-<p>Reading / リーディング</p>
-<p>Listening / リスニング</p>
 
-<p>riting / ライティング</p>
+<p>Reading・Listening・riting訓練が出来る！</p>
 
-慣れたら、リスニングで、シャドーインにも出来る！
-</div>
-<div>
-<p class ="center">学習報告でモチベーションアップ</p>
-<p class ="center">繰り返しで、英語の脳を作ろう！！</P>
-<p class ="center">簡単な英語からちょっとづつ自信をつけていける！</p>
+<p>みんなの学習報告でモチベーションを上げる</p>
+
 </div>
 
 
@@ -32,14 +42,12 @@
 
 
 
-
-<img src="${pageContext.request.contextPath}/pic/index.jpg" alt="リスト">
-
-
-
-
-
-
+<p class ="center">
+<img src="${pageContext.request.contextPath}/pic/index.jpg" alt="リスト" class ="img">
+</p>
+<div class ="colored">
+<h1 class="center">英語脳を手に入れよう</h1>
+</div>
 
 
 </body>

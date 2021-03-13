@@ -21,17 +21,33 @@
 <head>
 <meta charset="UTF-8">
 <title>どこつぶ</title>
+<link rel="stylesheet" href="index.css" />
 </head>
 <body>
-<h1>どこつぶメイン</h1>
-<p>
+
+
+<div class="flex">
+<div class="flex__inner">
+<p>English brain</p>
+<p><img src="${pageContext.request.contextPath}/pic/brain.jpeg" alt="リスト" class ="img_icon">
+
+</div>
+<div class="flex__inner">
+<p><a href="MainServlet">Main</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p><a href="CheckproblemServret">Reading</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="SelectProblem">Writing・Listening</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="ChatServlet">みんなの学習記録</a></p>
+
+</div>
+</div>
+<hr>
 
 
 
-<c:out value="${userId.nickName}" />さん、ログイン中
-<a href="SelectProblem">戻る</a>
-</p>
-
+<div class ="center">
 <c:if test="${startstop==0}">
 <p><a href="ProblemServlet">開始</a></p>
 </c:if>
@@ -39,6 +55,17 @@
 <p>
 
 <c:if test="${startstop>0}">
+<p>聴き取った、文章を入力してください</p>
+
+<c:if test="${mondaisuu <20}">
+問題<%= view_mondaisuu%>
+
+</c:if>
+<c:if test="${mondaisuu>19}">
+<p>問題<%= mondaisuu%></p>
+
+</c:if>
+<br><br>
 
 
 <c:forEach var="e" begin="1" end="${one_game_problemlist[mondaisuu].getWord()}" step="1">
@@ -58,14 +85,7 @@ _____________
 </p>
 
 
-<c:if test="${mondaisuu <20}">
-問題<%= view_mondaisuu%>
 
-</c:if>
-<c:if test="${mondaisuu>19}">
-<p>問題<%= mondaisuu%></p>
-
-</c:if>
 
 
 
@@ -115,17 +135,18 @@ _____________
 <input type="text" name="input_no15">
 </c:if>
 <input type="hidden" name="onemore" value="2">
-
+<br><br>
 <input type="submit" value="答える">
 </form>
 
 <form action="AnswerServlet" method="post">
 <input type="hidden" name="onemore" value="1">
 
-<input type="submit" value="もう１回">
+<input type="submit" value="もう１回聴く">
 </form>
 </c:if>
 </c:if>
+</div>
 
 
 
@@ -136,7 +157,8 @@ _____________
 
 
 
-<p>${kekka}</p>
+<p class= "center">${kekka}</p>
+<div class= "center">
 <c:if test="${mondaisuu>=20}">
 
 <c:if test="${machigai>0}">
@@ -155,7 +177,7 @@ _____________
 </c:if>
 <a href="OnemoreServlet">もう１回やる</a>
 </c:if>
-
+</div>
 
 <script>
   // 発言を作成
