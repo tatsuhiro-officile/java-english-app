@@ -189,6 +189,8 @@ public class UserDAO {
 		      if (rs.next()) {
 		    	  originalnickname = rs.getString("NICKNAME");
 
+		    	  System.out.println("sqlから取り出したニックネーム"+originalnickname);
+
 
 
 		      // SELECTを実行し、結果表を取得
