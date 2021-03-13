@@ -72,6 +72,9 @@ public class RegisterServlet extends HttpServlet {
     	String originalidresult= originalid_check.originalid_check(register);
     	Originalnickname_check Originalnickname_check = new Originalnickname_check();
     	String originalniciknameresult= Originalnickname_check.originalnicikname_check(register);
+    	System.out.println(originalniciknameresult);
+
+
 
     	System.out.println("ニックネームrちぇっく");
     	if(!(originalidresult==null)){
