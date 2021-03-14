@@ -19,7 +19,7 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 
 <div class="flex">
 <div class="flex__inner">
-<p>English brain</p>
+<p>Englishbrain</p>
 <p><img src="${pageContext.request.contextPath}/pic/brain.jpeg" alt="リスト" class ="img_icon">
 
 </div>
