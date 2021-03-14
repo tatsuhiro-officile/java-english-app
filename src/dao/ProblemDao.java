@@ -22,7 +22,7 @@ public class ProblemDao{
         String username = dbUri.getUserInfo().split(":")[0];
         String password = dbUri.getUserInfo().split(":")[1];
         // JDBC用のURLを生成。
-        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath();
+        String dbUrl = "jdbc:mysql://" + dbUri.getHost() + dbUri.getPath() + "?useUnicode=true&characterEncoding=utf8";
 
         return DriverManager.getConnection(dbUrl, username, password);
     }
@@ -91,57 +91,6 @@ public class ProblemDao{
         return problemList;
     }
 
-    public boolean create(Problem problem) {
-        try {
-            // ドライバの読み込み。
-        Class.forName ("com.mysql.cj.jdbc.Driver");
-        // データベースへ接続のためprivateメソッドを呼び出す。
-        try(Connection conn = getConnection()) {
-            String sql = "INSERT INTO PROBLEM(ID,WORD,LEVEL,NO1,NO2,NO3,NO4,NO5,NO6,NO7,NO8,NO9,NO10,NO11,NO12,NO13,NO14,NO15,JAPANESE,QUATION,COMMA) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-            PreparedStatement pStmt = conn.prepareStatement(sql);
-            // INSERT文中の「?」に使用する値を設定しSQLを完成
-            pStmt.setInt(1, problem.getId());
-            pStmt.setInt(2, problem.getWord());
-            pStmt.setInt(3, problem.getLevel());
-            pStmt.setString(4, problem.getNo1());
-            pStmt.setString(5, problem.getNo2());
-            pStmt.setString(6, problem.getNo3());
-            pStmt.setString(7, problem.getNo4());
-            pStmt.setString(8, problem.getNo5());
-            pStmt.setString(9, problem.getNo6());
-            pStmt.setString(10, problem.getNo7());
-            pStmt.setString(11, problem.getNo8());
-            pStmt.setString(12, problem.getNo9());
-            pStmt.setString(13, problem.getNo10());
-            pStmt.setString(14, problem.getNo11());
-            pStmt.setString(15, problem.getNo12());
-            pStmt.setString(16, problem.getNo13());
-            pStmt.setString(17, problem.getNo14());
-            pStmt.setString(18, problem.getNo15());
-
-
-
-            // INSERT文を実行
-            int result = pStmt.executeUpdate();
-
-            if (result != 1) {
-              return false;
-            }
-
-        }catch (URISyntaxException e) {
-            e.printStackTrace();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    } catch (ClassNotFoundException e1) {
-        e1.printStackTrace();
-
-    }
-        return true;
-
-    }
 
     public ArrayList<Problem>  view_problem(ArrayList<Integer> list) {
     	ArrayList<Problem> view_problemlst = new ArrayList<Problem>();
@@ -211,6 +160,71 @@ public class ProblemDao{
 
     }
        return view_problemlst;
+
+    }
+
+    public boolean create(Problem problem) {
+
+        try {
+            // ドライバの読み込み。
+        Class.forName ("com.mysql.cj.jdbc.Driver");
+        // データベースへ接続のためprivateメソッドを呼び出す。
+        try(Connection conn = getConnection()) {
+
+
+
+
+
+	      // SELECT文の準備
+	      String sql = "INSERT INTO PROBLEM(ID,WORD,LEVEL,NO1,NO2,NO3,NO4,NO5,NO6,NO7,NO8,NO9,NO10,NO11,NO12,NO13,NO14,NO15,JAPANESE,QUATION,COMMA) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	      PreparedStatement pStmt = conn.prepareStatement(sql);
+	      System.out.println("sqlinserset");
+
+
+	      pStmt.setInt(1, problem.getId());
+	      pStmt.setInt(2, problem.getWord());
+	      pStmt.setInt(3, problem.getLevel());
+	      pStmt.setString(4, problem.getNo1());
+	      pStmt.setString(5, problem.getNo2());
+	      pStmt.setString(6, problem.getNo3());
+	      pStmt.setString(7, problem.getNo4());
+	      pStmt.setString(8, problem.getNo5());
+	      pStmt.setString(9, problem.getNo6());
+	      pStmt.setString(10, problem.getNo7());
+	      pStmt.setString(11, problem.getNo8());
+	      pStmt.setString(12, problem.getNo9());
+	      pStmt.setString(13, problem.getNo10());
+	      pStmt.setString(14, problem.getNo11());
+	      pStmt.setString(15, problem.getNo12());
+	      pStmt.setString(16, problem.getNo13());
+	      pStmt.setString(17, problem.getNo14());
+	      pStmt.setString(18, problem.getNo15());
+	      pStmt.setString(19, problem.getJapanese());
+	      pStmt.setInt(20, problem.getQuations());
+	      pStmt.setInt(21, problem.getComma());
+
+
+
+
+
+	      // INSERT文を実行
+	      int result = pStmt.executeUpdate();
+	      System.out.println("update");
+
+	      if (result != 1) {
+	  	        return false;
+	  	      }
+        }catch (URISyntaxException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    } catch (ClassNotFoundException e1) {
+        e1.printStackTrace();
+
+    }
+       return true;
 
     }
 
