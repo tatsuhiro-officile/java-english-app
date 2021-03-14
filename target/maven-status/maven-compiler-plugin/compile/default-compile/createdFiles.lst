@@ -17,6 +17,7 @@ model/Register.class
 model/Done_update_Logic.class
 model/CheckproblemLogic.class
 servlet/ProblemServlet.class
+servlet/L_SelectProblem.class
 model/Originalnickname_check.class
 servlet/ChatServlet.class
 servlet/CheckproblemServlet.class
@@ -24,6 +25,7 @@ servlet/L_AnswerServlet.class
 model/PostproblemLogic.class
 model/PostchatLogic.class
 model/Point_update_Logic.class
+servlet/OriginalServlet.class
 model/RegisterLogic.class
 model/Originalid_Check.class
 model/GetchatLogic.class

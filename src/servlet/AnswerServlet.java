@@ -36,6 +36,27 @@ public class AnswerServlet extends HttpServlet {
       HttpServletResponse response)
       throws ServletException, IOException {
 	  request.setCharacterEncoding("UTF-8");
+		 int id =0;
+		  int word =0;
+		  int level =0;
+		  String no1 = "_";
+		  String no2 = "_";
+		  String no3= "_";
+		  String no4= "_";
+		  String no5= "_";
+		  String no6= "_";
+		  String no7= "_";
+		  String no8= "_";
+		  String no9= "_";
+		  String no10= "_";
+		  String no11= "_";
+		  String no12= "_";
+		  String no13= "_";
+		  String no14= "_";
+		  String no15 = "_";
+		  String japanese = "_";
+		  int quations = 0;
+		  int comma = 0;
 
 
     // リクエストパラメータの取得
@@ -63,27 +84,7 @@ public class AnswerServlet extends HttpServlet {
 	  	int mondaisuu =  (int) session.getAttribute("mondaisuu");
 	  	int inputtingform= one_game_problemlist.get(mondaisuu).getWord();
 
-		 int id =0;
-		  int word =0;
-		  int level =0;
-		  String no1 = "";
-		  String no2 = "";
-		  String no3= "";
-		  String no4= "1";
-		  String no5= "1";
-		  String no6= "1";
-		  String no7= "1";
-		  String no8= "1";
-		  String no9= "1";
-		  String no10= "1";
-		  String no11= "1";
-		  String no12= "1";
-		  String no13= "1";
-		  String no14= "1";
-		  String no15 = "1";
-		  String japanese = "";
-		  int quations = 0;
-		  int comma = 0;
+
 
 
 
@@ -92,18 +93,18 @@ public class AnswerServlet extends HttpServlet {
 		  String answer1 = one_game_problemlist.get(mondaisuu).getNo1();
 		  if (!your_answer1.equals(answer1)) {
 			  machigaisuu += 1;
-			  no3 =  ("X"+your_answer1);
+			  no1 =  ("X"+your_answer1);
 		  }
 
 		  String answer2 = one_game_problemlist.get(mondaisuu).getNo2();
 		  if (!your_answer2.equals(answer2)) {
 			  machigaisuu += 1;
-			  no4 =  ("X"+your_answer2);
+			  no2 =  ("X"+your_answer2);
 		  	}
 		  String answer3 = one_game_problemlist.get(mondaisuu).getNo3();
 		  if (!your_answer3.equals(answer3)) {
 			  machigaisuu += 1;
-			  no5 =  ("X"+your_answer3);
+			  no3 =  ("X"+your_answer3);
 		  }
 
 
@@ -234,10 +235,13 @@ public class AnswerServlet extends HttpServlet {
 
 		  }else {
 			  session.setAttribute("kekka", "不正解");
+			  System.out.println("no1標示"+no1);
 			  ArrayList<Problem>  machigailist =(ArrayList<Problem>) session.getAttribute("machigailist");
 			  Problem problem = new Problem(id,word,level,no1,no2,no3,no4,no5,no6,no7,no8,
 				  no9,no10,no11,no12,no13,no14,no15,japanese,quations,comma);
 			  machigailist.add(problem);
+
+
 			  session.setAttribute("machigailist",machigailist);
 
 			  ArrayList<Problem>  kaitoulist =(ArrayList<Problem>) session.getAttribute("kaitoulist");

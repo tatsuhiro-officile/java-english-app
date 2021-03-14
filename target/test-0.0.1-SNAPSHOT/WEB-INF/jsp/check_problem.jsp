@@ -20,7 +20,9 @@
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p><a href="CheckproblemServret">Reading</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
-<p> <a href="SelectProblem">Writing・Listening</a></p>
+<p> <a href="SelectProblem">Writing</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="L_SelectProblemServlet">Listening</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p> <a href="ChatServlet">みんなの学習記録</a></p>
 

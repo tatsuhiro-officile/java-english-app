@@ -37,7 +37,9 @@
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p><a href="CheckproblemServret">Reading</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
-<p> <a href="SelectProblem">Writing・Listening</a></p>
+<p> <a href="SelectProblem">Writing</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="L_SelectProblemServlet">Listening</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p> <a href="ChatServlet">みんなの学習記録</a></p>
 
@@ -157,23 +159,27 @@ _____________
 
 
 
-<p class= "center">${kekka}</p>
-<div class= "center">
+<div class="center">
+<p>${kekka}</p>
 <c:if test="${mondaisuu>=20}">
-
 <c:if test="${machigai>0}">
 <%= mondaisuu%>中<%= seikaisuu%>正解<br><br><br>
 
 <c:forEach var="i" begin="0" end="<%= machigaisuu%>" step="1">
-------------------------------------------<br>
-間違え:<c:out value="${machigailist[i].no3}"/><br>
-正解:<c:out value="${kaitoulist[i].no3}"/><br>
-------------------------------------------<br>
+<hr>
+間違え箇所:<c:out value="${machigailist[i].no1}"/>&nbsp;<c:out value="${machigailist[i].no2}"/>&nbsp;<c:out value="${machigailist[i].no3}"/>&nbsp;
+<c:out value="${machigailist[i].no4}"/>&nbsp;<c:out value="${machigailist[i].no5}"/>&nbsp;<c:out value="${machigailist[i].no6}"/>&nbsp;<c:out value="${machigailist[i].no7}"/>&nbsp;<c:out value="${machigailist[i].no8}"/>&nbsp;<c:out value="${machigailist[i].no9}"/>
+<c:out value="${machigailist[i].no11}"/>&nbsp;<c:out value="${machigailist[i].no12}"/>&nbsp;<c:out value="${machigailist[i].no13}"/>&nbsp;<c:out value="${machigailist[i].no14}"/>&nbsp;<c:out value="${machigailist[i].no15}"/><br><br>
+
+正解の文章:<c:out value="${kaitoulist[i].no1}"/>&nbsp;<c:out value="${kaitoulist[i].no2}"/>&nbsp;<c:out value="${kaitoulist[i].no3}"/>&nbsp;<c:out value="${kaitoulist[i].no4}"/>&nbsp;<c:out value="${kaitoulist[i].no5}"/>&nbsp;<c:out value="${kaitoulist[i].no6}"/>
+<c:out value="${kaitoulist[i].no7}"/>&nbsp;<c:out value="${kaitoulist[i].no8}"/>&nbsp;<c:out value="${kaitoulist[i].no9}"/>&nbsp;<c:out value="${kaitoulist[i].no10}"/>&nbsp;<c:out value="${kaitoulist[i].no11}"/>&nbsp;<c:out value="${kaitoulist[i].no12}"/>
+<c:out value="${kaitoulist[i].no13}"/>&nbsp;<c:out value="${kaitoulist[i].no14}"/>&nbsp;<c:out value="${kaitoulist[i].no15}"/><br>
+
+<hr>
 </c:forEach>
 </c:if>
-
 <c:if test="${machigai==0}">
-(*ﾟ▽ﾟ)/ﾟ･:*【祝】*:･ﾟ＼(ﾟ▽ﾟ*)全問正解<br>
+(*ﾟ▽ﾟ)/ﾟ･:*【祝】*:･ﾟ＼(ﾟ▽ﾟ*)全問正解
 </c:if>
 <a href="OnemoreServlet">もう１回やる</a>
 </c:if>

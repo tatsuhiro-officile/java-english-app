@@ -27,7 +27,9 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p><a href="CheckproblemServret">Reading</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
-<p> <a href="SelectProblem">Writing・Listening</a></p>
+<p> <a href="SelectProblem">Writing</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="L_SelectProblemServlet">Listening</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p> <a href="ChatServlet">みんなの学習記録</a></p>
 
@@ -48,12 +50,7 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 <option value=4>旅行英語1</option>
 <option value=5>ビジネス英語1</option>
 <option value=6>基礎英語4</option>
-<option value=7>基礎英語1リスニング</option>
-<option value=8>基礎英語2リスニング</option>
-<option value=9>基礎英語3リスニング1</option>
-<option value=10>旅行英語1リスニング</option>
-<option value=11>ビジネス英語1リスニング</option>
-<option value=12>基礎英語4リスニング</option>
+
 </select>
 </p>
 
@@ -112,51 +109,8 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 </c:if>
 </p>
 <p>
-<c:if test="${userId.problem7==0}">
-07：基礎英語1リスニング
-</c:if>
-<c:if test="${userId.problem7>0}">
-07：基礎英語1リスニングクリア
-</c:if>
-<p>
-<p>
-<c:if test="${userId.problem8==0}">
-08：基礎英語2リスニング
-</c:if>
-<c:if test="${userId.problem8>0}">
-08：基礎英語2リスニングクリア
-</c:if>
-<p>
-<c:if test="${userId.problem9==0}">
-09：基礎英語3リスニング
-</c:if>
-<c:if test="${userId.problem9>0}">
-09：基礎英語3リスニング
-</c:if>
-</p>
-<p>
-<c:if test="${userId.problem10==0}">
-10：旅行英語1
-</c:if>
-<c:if test="${userId.problem10>0}">
-10：旅行英語1クリア
-</c:if>
-</p>
-<p>
-<c:if test="${userId.problem11==0}">
-11：ビジネス英語1リスニング
-</c:if>
-<c:if test="${userId.problem11>0}">
-11：ビジネス英語1リスニングクリア
-</c:if>
-</p>
-<p>
-<c:if test="${userId.problem12==0}">
-12：基礎英語4リスニング
-</c:if>
-<c:if test="${userId.problem12>0}">
-12：基礎英語4リスニングクリア
-</c:if>
+
+
 </p>
 </div>
 </div>

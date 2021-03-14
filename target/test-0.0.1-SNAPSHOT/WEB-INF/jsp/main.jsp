@@ -28,9 +28,16 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p><a href="CheckproblemServret">Reading</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
-<p> <a href="SelectProblem">Writing・Listening</a></p>
+<p> <a href="SelectProblem">Writing</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="L_SelectProblemServlet">Listening</a></p>
+
+
+
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p> <a href="ChatServlet">みんなの学習記録</a></p>
+
+
 
 </div>
 </div>
@@ -52,15 +59,19 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
     </tr>
     <tr>
       <td>1:</td>
-      <td>まずはリーディングで問題の確認</td>
+      <td>まずはReadingで問題の確認</td>
     </tr>
     <tr>
       <td>2:</td>
-      <td>リスニングとライティングを繰り返す。</td>
+      <td>確認した問題のWritingに挑戦</td>
     </tr>
     <tr>
       <td>3:</td>
-      <td>リスニングとライティングが全問正解できれば、新しい問題へ</td>
+      <td>確認した問題のListeningに挑戦</td>
+    </tr>
+        <tr>
+      <td>4:</td>
+      <td>それぞれクリアになれば次の問題へ</td>
     </tr>
   </table>
 

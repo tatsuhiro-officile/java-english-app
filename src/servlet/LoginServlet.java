@@ -30,9 +30,6 @@ public class LoginServlet extends HttpServlet {
   	Loginfailure loginresult = new Loginfailure(failuremassage);
   	session.setAttribute("failure", loginresult);
 
-  	session.removeAttribute("userId");
-
-
 
 
 
