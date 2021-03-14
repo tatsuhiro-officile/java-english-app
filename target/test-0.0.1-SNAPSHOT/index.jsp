@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>英語学習サイト</title>
+<title>英語学習</title>
 <link rel="stylesheet" href="index.css" />
 </head>
 <body>
