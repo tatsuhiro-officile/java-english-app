@@ -32,9 +32,10 @@
 <form action="LoginServlet" method="post">
 <p class="center">
 &nbsp;&nbsp;I&nbsp;&nbsp;&nbsp;D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="originalid"><br>
+<br>
 パスワード<input type="password" name="pass"></p><br>
 <p class="center">
-<input type="submit" value="ログイン"></p>
+<input type="submit" value="login"></p>
 </form>
 
 </div>

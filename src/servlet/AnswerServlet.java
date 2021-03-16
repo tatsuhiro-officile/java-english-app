@@ -93,18 +93,18 @@ public class AnswerServlet extends HttpServlet {
 		  String answer1 = one_game_problemlist.get(mondaisuu).getNo1();
 		  if (!your_answer1.equals(answer1)) {
 			  machigaisuu += 1;
-			  no1 =  ("X"+your_answer1);
+			  no1 =  (your_answer1);
 		  }
 
 		  String answer2 = one_game_problemlist.get(mondaisuu).getNo2();
 		  if (!your_answer2.equals(answer2)) {
 			  machigaisuu += 1;
-			  no2 =  ("X"+your_answer2);
+			  no2 =  (your_answer2);
 		  	}
 		  String answer3 = one_game_problemlist.get(mondaisuu).getNo3();
 		  if (!your_answer3.equals(answer3)) {
 			  machigaisuu += 1;
-			  no3 =  ("X"+your_answer3);
+			  no3 =  (your_answer3);
 		  }
 
 
@@ -115,14 +115,14 @@ public class AnswerServlet extends HttpServlet {
 		  	String answer15 = one_game_problemlist.get(mondaisuu).getNo15();
 		  	if (!your_answer15.equals(answer15)) {
 			  machigaisuu += 1;
-			  no15 =  ("X"+your_answer15);
+			  no15 =  (your_answer15);
 		  }
 	  	case(14):
 	  		String your_answer14 = request.getParameter("input_no14");
 		  	String answer14 = one_game_problemlist.get(mondaisuu).getNo14();
 		  	if (!your_answer14.equals(answer14)) {
 			  machigaisuu += 1;
-			  no14 =  ("X"+your_answer14);
+			  no14 =  (your_answer14);
 		  }
 
 	  	case(13):
@@ -130,70 +130,70 @@ public class AnswerServlet extends HttpServlet {
 		  	String answer13 = one_game_problemlist.get(mondaisuu).getNo13();
 		  	if (!your_answer13.equals(answer13)) {
 			  machigaisuu += 1;
-			  no13 =  ("X"+your_answer13);
+			  no13 =  (your_answer13);
 		  }
 	  	case(12):
 	  		String your_answer12 = request.getParameter("input_no12");
 		  String answer12 = one_game_problemlist.get(mondaisuu).getNo12();
 		  if (!your_answer12.equals(answer12)) {
 			  machigaisuu += 1;
-			  no12 =  ("X"+your_answer12);
+			  no12 =  (your_answer12);
 		  }
 	  	case(11):
 	  		String your_answer11 = request.getParameter("input_no11");
 		  String answer11 = one_game_problemlist.get(mondaisuu).getNo11();
 		  if (!your_answer11.equals(answer11)) {
 			  machigaisuu += 1;
-			  no11 =  ("X"+your_answer11);
+			  no11 =  (your_answer11);
 		  }
 	  	case(10):
 	  		String your_answer10 = request.getParameter("input_no10");
 		  String answer10 = one_game_problemlist.get(mondaisuu).getNo10();
 		  if (!your_answer10.equals(answer10)) {
 			  machigaisuu += 1;
-			  no10 =  ("X"+your_answer10);
+			  no10 =  (your_answer10);
 		  }
 	  	case(9):
 	  		String your_answer9 = request.getParameter("input_no9");
 		  String answer9 = one_game_problemlist.get(mondaisuu).getNo9();
 		  if (!your_answer9.equals(answer9)) {
 			  machigaisuu += 1;
-			  no9 =  ("X"+your_answer9);
+			  no9 =  (your_answer9);
 		  }
 	  	case(8):
 	  		String your_answer8 = request.getParameter("input_no8");
 		  String answer8 = one_game_problemlist.get(mondaisuu).getNo8();
 		  if (!your_answer8.equals(answer8)) {
 			  machigaisuu += 1;
-			  no8 =  ("X"+your_answer8);
+			  no8 =  (your_answer8);
 		  }
 	  	case(7):
 	  		String your_answer7 = request.getParameter("input_no7");
 		  String answer7 = one_game_problemlist.get(mondaisuu).getNo7();
 		  if (!your_answer7.equals(answer7)) {
 			  machigaisuu += 1;
-			  no7 =  ("X"+your_answer7);
+			  no7 =  (your_answer7);
 		  }
 	  	case(6):
 	  		String your_answer6 = request.getParameter("input_no6");
 		  String answer6 = one_game_problemlist.get(mondaisuu).getNo6();
 		  if (!your_answer6.equals(answer6)) {
 			  machigaisuu += 1;
-			  no6 =  ("X"+your_answer6);
+			  no6 =  (your_answer6);
 		  }
 	  	case(5):
 	  		String your_answer5 = request.getParameter("input_no5");
 		  String answer5 = one_game_problemlist.get(mondaisuu).getNo5();
 		  if (!your_answer5.equals(answer5)) {
 			  machigaisuu += 1;
-			  no5 =  ("X"+your_answer5);
+			  no5 =  (your_answer5);
 		  	}
 	  	case(4):
 	  		String your_answer4 = request.getParameter("input_no4");
 		  String answer4 = one_game_problemlist.get(mondaisuu).getNo4();
 		  if (!your_answer4.equals(answer4)) {
 			  machigaisuu += 1;
-			  no4 =  ("X"+your_answer4);
+			  no4 =  (your_answer4);
 		  }
 
 	  	}

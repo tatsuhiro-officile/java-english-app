@@ -24,7 +24,10 @@
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p> <a href="L_SelectProblemServlet">Listening</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
-<p> <a href="ChatServlet">みんなの学習記録</a></p>
+<p> <a href="ChatServlet">Learning report</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+
+<p> <a href="LogoutServlet" onclick="return confirm('本当にログアウトしてもよろしいですか？');">Logout</a></p>
 
 </div>
 </div>
@@ -33,14 +36,15 @@
 <div class="center">
 <c:if test="${problemview==0}">
 <form action="CheckproblemServret" method="post">
-<p>リーディングを行う問題を選択してください</p>
+<p>Readingを行う問題を選択してください</p>
+<p>英語を読み解いて、日本語の意味を確認して下さい</p>
 <select name="select_problem">
 <option value=1>基礎英語1</option>
 <option value=2>基礎英語2</option>
 <option value=3>基礎英語3</option>
-<option value=4>旅行英語1</option>
+<option value=4>基礎英語4</option>
 <option value=5>ビジネス英語1</option>
-<option value=6>基礎英語4</option>
+<option value=6>ビジネス英語2</option>
 </select>
 <input type="hidden" name="problemview" value=1>
 

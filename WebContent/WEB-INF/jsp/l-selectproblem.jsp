@@ -31,7 +31,10 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p> <a href="L_SelectProblemServlet">Listening</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
-<p> <a href="ChatServlet">みんなの学習記録</a></p>
+<p> <a href="ChatServlet">Learning report</a></p>
+
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="LogoutServlet" onclick="return confirm('本当にログアウトしてもよろしいですか？');">Logout</a></p>
 
 </div>
 </div>
@@ -42,67 +45,67 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 <form action="L_SelectProblemServlet" method="post">
 
 問題を選択してください
-<p>
+<p>※開始すると音声が流れます。</p>
 <select name="select_problem">
 
-<option value=7>基礎英語1リスニング</option>
-<option value=8>基礎英語2リスニング</option>
-<option value=9>基礎英語3リスニング1</option>
-<option value=10>旅行英語1リスニング</option>
-<option value=11>ビジネス英語1リスニング</option>
-<option value=12>基礎英語4リスニング</option>
+<option value=7>基礎英語1</option>
+<option value=8>基礎英語2</option>
+<option value=9>基礎英語3</option>
+<option value=10>基礎英語4</option>
+<option value=11>ビジネス英語1</option>
+<option value=12>ビジネス英語2</option>
 </select>
-</p>
 
 
-<p><input type="submit" value="送信する"></p>
+
+<p><input type="submit" value="選択する"></p>
 </form>
 
 <p>
 <c:if test="${userId.problem7==0}">
-07：基礎英語1リスニング
+01：基礎英語1
 </c:if>
 <c:if test="${userId.problem7>0}">
-07：基礎英語1リスニングクリア
+01：基礎英語1<span class="blue">★クリア</span>
 </c:if>
 <p>
 <p>
 <c:if test="${userId.problem8==0}">
-08：基礎英語2リスニング
+02：基礎英語2
 </c:if>
 <c:if test="${userId.problem8>0}">
-08：基礎英語2リスニングクリア
+02：基礎英語2<span class="blue">★クリア</span>
 </c:if>
 <p>
 <c:if test="${userId.problem9==0}">
-09：基礎英語3リスニング
+03：基礎英語3
 </c:if>
 <c:if test="${userId.problem9>0}">
-09：基礎英語3リスニング
+03：基礎英語3<span class="blue">★クリア</span>
 </c:if>
 </p>
 <p>
 <c:if test="${userId.problem10==0}">
-10：旅行英語1
+04：基礎英語4
 </c:if>
 <c:if test="${userId.problem10>0}">
-10：旅行英語1クリア
+04：基礎英語4<span class="blue">★クリア</span>
 </c:if>
 </p>
 <p>
 <c:if test="${userId.problem11==0}">
-11：ビジネス英語1リスニング
+05：ビジネス英語1
 </c:if>
 <c:if test="${userId.problem11>0}">
-11：ビジネス英語1リスニングクリア
+05：ビジネス英語1<span class="blue">★クリア</span>
 </c:if>
 </p>
 <p>
 <c:if test="${userId.problem12==0}">
-12：基礎英語4リスニング
+06：ビジネス英語2
 </c:if>
 <c:if test="${userId.problem12>0}">
-12：基礎英語4リスニングクリア
+06：ビジネス英語2<span class="blue">★クリア</span>
 </c:if>
 </p>
 </div>

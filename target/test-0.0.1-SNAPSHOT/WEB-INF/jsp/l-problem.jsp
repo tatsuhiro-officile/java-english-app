@@ -41,7 +41,9 @@
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p> <a href="L_SelectProblemServlet">Listening</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
-<p> <a href="ChatServlet">みんなの学習記録</a></p>
+<p> <a href="ChatServlet">Learning report</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="LogoutServlet" onclick="return confirm('本当にログアウトしてもよろしいですか？');">Logout</a></p>
 
 </div>
 </div>
@@ -52,6 +54,7 @@
 <div class ="center">
 <c:if test="${startstop==0}">
 <p><a href="ProblemServlet">開始</a></p>
+
 </c:if>
 
 <p>
@@ -139,15 +142,21 @@ _____________
 <input type="hidden" name="onemore" value="2">
 <br><br>
 <input type="submit" value="答える">
-</form>
+</form><br>
 
+
+</c:if>
+</c:if>
+</div>
+<div class="left">
 <form action="AnswerServlet" method="post">
 <input type="hidden" name="onemore" value="1">
 
+
 <input type="submit" value="もう１回聴く">
+
+
 </form>
-</c:if>
-</c:if>
 </div>
 
 

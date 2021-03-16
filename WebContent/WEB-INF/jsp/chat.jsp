@@ -24,7 +24,9 @@
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p> <a href="L_SelectProblemServlet">Listening</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
-<p> <a href="ChatServlet">みんなの学習記録</a></p>
+<p> <a href="ChatServlet">Learning report</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="LogoutServlet" onclick="return confirm('本当にログアウトしてもよろしいですか？');">Logout</a></p>
 
 </div>
 </div>
@@ -38,15 +40,15 @@
 <form action="ChatServlet" method="post">
 
 <p>
-本日の学習結果:<br>
+<span class="shitasen">本日の学習結果:</span><br>
 <c:if test="${done.reading>0}">
-■本日のリーディング完了しています。
+★本日のリーディング完了しています。
 </c:if>
 <c:if test="${done.writeing>0}">
-■本日のライティング完了しています。
+★本日のライティング完了しています。
 </c:if>
 <c:if test="${done.listning>0}">
-■本日のリスニング完了しています。
+★本日のリスニング完了しています。
 </c:if>
 </p>
 

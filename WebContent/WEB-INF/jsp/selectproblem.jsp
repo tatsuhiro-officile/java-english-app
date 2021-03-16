@@ -31,7 +31,9 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p> <a href="L_SelectProblemServlet">Listening</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
-<p> <a href="ChatServlet">みんなの学習記録</a></p>
+<p> <a href="ChatServlet">Learning report</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="LogoutServlet" onclick="return confirm('本当にログアウトしてもよろしいですか？');">Logout</a></p>
 
 </div>
 </div>
@@ -47,15 +49,15 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 <option value=1>基礎英語1</option>
 <option value=2>基礎英語2</option>
 <option value=3>基礎英語3</option>
-<option value=4>旅行英語1</option>
+<option value=4>基礎英語4</option>
 <option value=5>ビジネス英語1</option>
-<option value=6>基礎英語4</option>
+<option value=6>ビジネス英語2</option>
 
 </select>
 </p>
 
 
-<p><input type="submit" value="送信する"></p>
+<p><input type="submit" value="選択する"></p>
 </form>
 
 
@@ -65,7 +67,7 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 01：基礎英語1
 </c:if>
 <c:if test="${userId.problem1>0}">
-01：基礎英語1クリア
+01：基礎英語1<span class="blue">★クリア</span>
 </c:if>
 </p>
 <p>
@@ -73,7 +75,7 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 02：基礎英語2
 </c:if>
 <c:if test="${userId.problem2>0}">
-02：基礎英語2クリア
+02：基礎英語2<span class="blue">★クリア</span>
 </c:if>
 </p>
 <p>
@@ -81,15 +83,15 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 03：基礎英語3
 </c:if>
 <c:if test="${userId.problem3>0}">
-03：基礎英語3クリア
+03：基礎英語3<span class="blue">★クリア</span>
 </c:if>
 </p>
 <p>
 <c:if test="${userId.problem4==0}">
-04：旅行英語1
+04：基礎英語4
 </c:if>
 <c:if test="${userId.problem4>0}">
-04：旅行英語1クリア
+04：基礎英語4<span class="blue">★クリア</span>
 </c:if>
 </p>
 <p>
@@ -97,15 +99,15 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 05：ビジネス英語1
 </c:if>
 <c:if test="${userId.problem5>0}">
-05：ビジネス英語1クリア
+05：ビジネス英語1<span class="blue">★クリア</span>
 </c:if>
 </p>
 <p>
 <c:if test="${userId.problem6==0}">
-06：基礎英語4
+06：ビジネス英語2
 </c:if>
 <c:if test="${userId.problem6>0}">
-06：基礎英語4クリア
+06：ビジネス英語2<span class="blue">★クリア</span>
 </c:if>
 </p>
 <p>

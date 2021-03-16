@@ -84,15 +84,15 @@ public class ChatServlet extends HttpServlet {
 
 
 	if(done.getListning()>0) {
-		text = text + " "+"リスニング達成";
+		text = text + " "+"★リスニング達成";
 
 	}
 	if(done.getReading()>0) {
-		text = text + " "+"リーディング達成";
+		text = text + " "+"★リーディング達成";
 
 	}
 	if(done.getWriteing()>0) {
-		text = text + " "+"ライティング達成";
+		text = text + " "+"★ライティング達成";
 
 	}
 

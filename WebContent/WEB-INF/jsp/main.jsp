@@ -19,7 +19,7 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 
 <div class="flex">
 <div class="flex__inner">
-<p>Englishbrain</p>
+<p>English brain</p>
 <p><img src="${pageContext.request.contextPath}/pic/brain.jpeg" alt="リスト" class ="img_icon">
 
 </div>
@@ -35,7 +35,10 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 
 
 <p>&nbsp;&nbsp;&nbsp;</p>
-<p> <a href="ChatServlet">みんなの学習記録</a></p>
+<p> <a href="ChatServlet">Learning report</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+
+<p> <a href="LogoutServlet" onclick="return confirm('本当にログアウトしてもよろしいですか？');">Logout</a></p>
 
 
 
@@ -44,7 +47,7 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 <hr>
 
 <p class="center">ようこそ<c:out value="${userId.getNickName()}" />さん</p>
-<p class="center"> 現在の勉強Writing/Listening回数は<c:out value="${userId.getPoint()}" />回</p>
+<p class="center"> 現在の勉強（Writing/Listening）回数は<c:out value="${userId.getPoint()}" />回です。</p>
 
 <div class="centering-block">
  <div class="centering-block-inner">
@@ -71,7 +74,7 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
     </tr>
         <tr>
       <td>4:</td>
-      <td>それぞれクリアになれば次の問題へ</td>
+      <td>WritingとListeningがクリアになれば次の問題へ</td>
     </tr>
   </table>
 

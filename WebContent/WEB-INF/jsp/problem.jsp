@@ -38,7 +38,9 @@
 <p>&nbsp;&nbsp;&nbsp;</p>
 <p> <a href="L_SelectProblemServlet">Listening</a></p>
 <p>&nbsp;&nbsp;&nbsp;</p>
-<p> <a href="ChatServlet">みんなの学習記録</a></p>
+<p> <a href="ChatServlet">Learning report</a></p>
+<p>&nbsp;&nbsp;&nbsp;</p>
+<p> <a href="LogoutServlet" onclick="return confirm('本当にログアウトしてもよろしいですか？');">Logout</a></p>
 
 </div>
 </div>
@@ -46,7 +48,10 @@
 <div class ="center">
 
 <c:if test="${startstop==0}">
-<p><a href="ProblemServlet">開始</a></p>
+<p><a href="ProblemServlet">開始</a></p><br>
+
+
+
 </c:if>
 <c:if test="${startstop>0}">
 

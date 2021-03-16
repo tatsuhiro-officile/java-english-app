@@ -30,9 +30,9 @@
 
 <div class ="center">
 
-<p>Reading・Listening・riting訓練が出来る！</p>
+<p>Reading・Listening・riting訓練が出来る</p>
 
-<p>みんなの学習報告でモチベーションを上げる</p>
+<p>Learning reportで学習の記録・みんなで共有が出来る</p>
 
 </div>
 

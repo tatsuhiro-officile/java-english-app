@@ -10,12 +10,10 @@
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/Login.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/L_AnswerServlet.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/View_problemLogic.java
-/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/WelcomeServlet.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/CheckproblemServlet.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/Originalnickname_check.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/ProblemServlet.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/OriginalServlet.java
-/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/L_SelectProblem.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/Point_update_Logic.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/Profile.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/RegisterLogic.java
@@ -40,6 +38,7 @@
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/Account.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/ChatServlet.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/PostchatLogic.java
+/Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/LogoutServlet.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/model/GetproblemLogic.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/L_SelectProblemServlet.java
 /Applications/Eclipse_2020-12.app/Contents/workspace/docoTsubu/src/servlet/SelectProblem.java

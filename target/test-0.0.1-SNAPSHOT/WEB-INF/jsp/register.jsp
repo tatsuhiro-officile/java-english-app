@@ -58,7 +58,7 @@
 </p>
 </div>
 <br>
-<input type="submit" value="登録する">
+<input type="submit" value="register">
 </form>
 </div>
  </div>
