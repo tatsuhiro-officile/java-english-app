@@ -41,24 +41,28 @@ public class L_SelectProblemServlet extends HttpServlet {
 
 
 	    	switch(word){
-	    		case 1:
-	    			problemnumber=0;
-	    			session.setAttribute("problemnumber", problemnumber);
-	    			break;
-	    		case 2:
-	    			problemnumber=21;
-	    			session.setAttribute("problemnumber", problemnumber);
-	    			break;
-	    		case 3:
-	    			problemnumber=41;
-	    			session.setAttribute("problemnumber", problemnumber);
-	    			break;
 	    		case 7:
 	    			problemnumber=0;
 	    			session.setAttribute("problemnumber", problemnumber);
 	    			break;
 	    		case 8:
 	    			problemnumber=21;
+	    			session.setAttribute("problemnumber", problemnumber);
+	    			break;
+	    		case 9:
+	    			problemnumber=41;
+	    			session.setAttribute("problemnumber", problemnumber);
+	    			break;
+	    		case 10:
+	    			problemnumber=61;
+	    			session.setAttribute("problemnumber", problemnumber);
+	    			break;
+	    		case 11:
+	    			problemnumber=81;
+	    			session.setAttribute("problemnumber", problemnumber);
+	    			break;
+	    		case 12:
+	    			problemnumber=101;
 	    			session.setAttribute("problemnumber", problemnumber);
 	    			break;
 	    	}

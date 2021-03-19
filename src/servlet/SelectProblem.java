@@ -53,6 +53,19 @@ public class SelectProblem extends HttpServlet {
 	    			problemnumber=41;
 	    			session.setAttribute("problemnumber", problemnumber);
 	    			break;
+	    		case 4:
+	    			problemnumber=61;
+	    			session.setAttribute("problemnumber", problemnumber);
+	    			break;
+
+	    		case 5:
+	    			problemnumber=81;
+	    			session.setAttribute("problemnumber", problemnumber);
+	    			break;
+	    		case 6:
+	    			problemnumber=101;
+	    			session.setAttribute("problemnumber", problemnumber);
+	    			break;
 	    		case 7:
 	    			problemnumber=0;
 	    			session.setAttribute("problemnumber", problemnumber);
