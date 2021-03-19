@@ -30,10 +30,10 @@
 
 <div class ="center">
 
-<p>Reading・Listening・Writing訓練が出来る</p>
-<p>アウトプットで英語脳を作る</p>
+<p>Reading・Listening・Writingの３つで訓練が出来る。</p>
+<p>アウトプットで英語脳重視で脳に定着を目指す。</p>
 
-<p>Learning reportで学習の記録・みんなで共有が出来る</p>
+<p>Learning reportで学習の記録・みんなで共有が出来る。</p>
 
 
 </div>
