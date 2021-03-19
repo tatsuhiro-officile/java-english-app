@@ -30,7 +30,7 @@
 
 <div class ="center">
 
-<p>Reading・Listening・riting訓練が出来る</p>
+<p>Reading・Listening・Writing訓練が出来る</p>
 <p>アウトプットで英語脳を作る</p>
 
 <p>Learning reportで学習の記録・みんなで共有が出来る</p>
