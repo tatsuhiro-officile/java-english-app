@@ -54,13 +54,16 @@ public class LoginServlet extends HttpServlet {
 
 
 
-
+    HttpSession session = request.getSession();
     // ログイン処理の実行
     Login login = new Login(id, originalid,nickname, pass,point);
-    LoginLogic bo = new LoginLogic();
-    model.Profile result = bo.execute(login);
+    session.setAttribute("login", login);
 
-    HttpSession session = request.getSession();
+    LoginLogic bo = new LoginLogic();
+    int number=1;
+    model.Profile result = bo.execute(login,number);
+
+
 
     // ログイン処理の成否によって処理を分岐
     if (result != null) { // ログイン成功時

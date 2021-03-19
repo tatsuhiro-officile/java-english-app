@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Login;
+import model.LoginLogic;
+
 @WebServlet("/SelectProblem")
 public class SelectProblem extends HttpServlet {
   private static final long serialVersionUID = 1L;
@@ -36,6 +39,10 @@ public class SelectProblem extends HttpServlet {
 	    session.setAttribute("getlevel", word);
 
 	    int problemnumber;
+
+
+
+
 
 
 
@@ -95,6 +102,15 @@ public class SelectProblem extends HttpServlet {
   protected void doGet(HttpServletRequest request,
       HttpServletResponse response)
       throws ServletException, IOException {
+	  HttpSession session = request.getSession();
+	    Login login =(Login)session.getAttribute("login");
+	    int number=2;
+
+
+
+	    LoginLogic update_user = new LoginLogic();
+	     model.Profile profile= update_user.execute(login,number);
+	     session.setAttribute("userId" ,profile);
 
 
 	    RequestDispatcher dispatcher = request.getRequestDispatcher(

@@ -31,7 +31,7 @@
 <div class ="center">
 
 <p>Reading・Listening・Writingの３つで訓練が出来る。</p>
-<p>アウトプットで英語脳重視で脳に定着を目指す。</p>
+
 
 <p>Learning reportで学習の記録・みんなで共有が出来る。</p>
 

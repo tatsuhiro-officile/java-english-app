@@ -3,9 +3,10 @@ package model;
 import dao.UserDAO;
 
 public class LoginLogic {
-  public Profile execute(Login login) {
+  public Profile execute(Login login,int number) {
     UserDAO dao = new UserDAO();
-    Profile account = dao.findByLogin(login);
+    System.out.println("logicok");
+    Profile account = dao.findByLogin(login, number);
 
 
     return account;

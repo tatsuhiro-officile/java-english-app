@@ -26,7 +26,7 @@ public class UserDAO {
         return DriverManager.getConnection(dbUrl, username, password);
     }
 
-    public Profile findByLogin(Login login) {
+    public Profile findByLogin(Login login, int number) {
 
         Profile profile = null;
 
@@ -36,11 +36,24 @@ public class UserDAO {
             // データベースへ接続のためprivateメソッドを呼び出す。
             try(Connection conn = getConnection()) {
 
+                PreparedStatement pStmt=null;
+
+                if(number==1) {
+                // SELECT文を準備
                 String sql = "SELECT ORIGINALID, PASS, POINT,NICKNAME,PROBLEM1,PROBLEM2,PROBLEM3,PROBLEM4,PROBLEM5,PROBLEM6,PROBLEM7,PROBLEM8,PROBLEM9,PROBLEM10,PROBLEM11,PROBLEM12"
-                  		+ " FROM USER3 WHERE ORIGINALID = ? AND PASS = ?";
-                  PreparedStatement pStmt = conn.prepareStatement(sql);
-                  pStmt.setString(1, login.getOriginalid());
-                  pStmt.setString(2, login.getpassword());
+                		+ " FROM USER WHERE ORIGINALID = ? AND PASS = ?";
+               pStmt = conn.prepareStatement(sql);
+                pStmt.setString(1, login.getOriginalid());
+                pStmt.setString(2, login.getpassword());
+
+                }else {
+                    String sql = "SELECT ORIGINALID, PASS, POINT,NICKNAME,PROBLEM1,PROBLEM2,PROBLEM3,PROBLEM4,PROBLEM5,PROBLEM6,PROBLEM7,PROBLEM8,PROBLEM9,PROBLEM10,PROBLEM11,PROBLEM12"
+                      		+ " FROM USER WHERE ORIGINALID = ?";
+                pStmt = conn.prepareStatement(sql);
+                      pStmt.setString(1, login.getOriginalid());
+
+
+                }
 
                   // SELECTを実行し、結果表を取得
                   ResultSet rs = pStmt.executeQuery();
