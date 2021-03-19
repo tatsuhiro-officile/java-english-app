@@ -99,7 +99,7 @@ _____________
 <br>
 <c:if test="${startstop>0}">
 <c:if test="${mondaisuu <20}">
-<form action="AnswerServlet" method="post">
+<form action="AnswerServlet" method="post" autocomplete="off">
 <input type="text" name="input_no1">
 <input type="text" name="input_no2">
 <input type="text" name="input_no3">
