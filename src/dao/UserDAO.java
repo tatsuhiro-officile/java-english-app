@@ -41,16 +41,18 @@ public class UserDAO {
                 if(number==1) {
                 // SELECT文を準備
                 String sql = "SELECT ORIGINALID, PASS, POINT,NICKNAME,PROBLEM1,PROBLEM2,PROBLEM3,PROBLEM4,PROBLEM5,PROBLEM6,PROBLEM7,PROBLEM8,PROBLEM9,PROBLEM10,PROBLEM11,PROBLEM12"
-                		+ " FROM USER WHERE ORIGINALID = ? AND PASS = ?";
+                		+ " FROM USER3 WHERE ORIGINALID = ? AND PASS = ?";
                pStmt = conn.prepareStatement(sql);
                 pStmt.setString(1, login.getOriginalid());
                 pStmt.setString(2, login.getpassword());
+                System.out.println("1dao");
 
                 }else {
                     String sql = "SELECT ORIGINALID, PASS, POINT,NICKNAME,PROBLEM1,PROBLEM2,PROBLEM3,PROBLEM4,PROBLEM5,PROBLEM6,PROBLEM7,PROBLEM8,PROBLEM9,PROBLEM10,PROBLEM11,PROBLEM12"
-                      		+ " FROM USER WHERE ORIGINALID = ?";
+                      		+ " FROM USER3 WHERE ORIGINALID = ?";
                 pStmt = conn.prepareStatement(sql);
                       pStmt.setString(1, login.getOriginalid());
+                      System.out.println("2dao");
 
 
                 }
@@ -59,7 +61,7 @@ public class UserDAO {
                   ResultSet rs = pStmt.executeQuery();
 
 
-
+                  System.out.println("3dao");
                   // 一致したユーザーが存在した場合
                   // そのユーザーを表すAccountインスタンスを生成
                   if (rs.next()) {
@@ -101,7 +103,7 @@ public class UserDAO {
         } catch (ClassNotFoundException e1) {
             e1.printStackTrace();
             return null;
-        }
+        }System.out.println("4dao");
         return profile;
     }
 

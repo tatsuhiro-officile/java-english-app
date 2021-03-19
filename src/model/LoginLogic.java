@@ -8,6 +8,8 @@ public class LoginLogic {
     System.out.println("logicok");
     Profile account = dao.findByLogin(login, number);
 
+    System.out.println("loginlogicok");
+
 
     return account;
 

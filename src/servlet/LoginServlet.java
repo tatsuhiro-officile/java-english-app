@@ -62,6 +62,7 @@ public class LoginServlet extends HttpServlet {
     LoginLogic bo = new LoginLogic();
     int number=1;
     model.Profile result = bo.execute(login,number);
+    System.out.println("servletok");
 
 
 
