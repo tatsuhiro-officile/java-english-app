@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>どこつぶ</title>
+<title>新規登録</title>
 <link rel="stylesheet" href="index.css" />
 </head>
 <body>
