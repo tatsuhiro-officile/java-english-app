@@ -97,8 +97,6 @@ public class ChatServlet extends HttpServlet {
 	}
 
 
-
-
     		if(effort>0) {
 
 
