@@ -27,7 +27,6 @@
 </div>
 
 
-
 <div class ="center">
 
 <p>Reading・Listening・Writingの３つで訓練が出来る。</p>
