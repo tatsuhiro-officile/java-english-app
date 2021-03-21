@@ -12,7 +12,7 @@ Profile userinfomation = (Profile) session.getAttribute("userId");
 <head>
 <link rel="stylesheet" href="index.css" />
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Main page</title>
 </head>
 <body>
 <% request.setCharacterEncoding("UTF-8"); %>

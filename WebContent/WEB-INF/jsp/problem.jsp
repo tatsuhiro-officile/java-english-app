@@ -18,7 +18,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>どこつぶ</title>
+<title>Writing</title>
 <link rel="stylesheet" href="index.css" />
 </head>
 <body>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>スッキリ商店</title>
+<title>ログイン</title>
 <link rel="stylesheet" href="index.css" />
 </head>
 <body>
