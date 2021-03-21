@@ -87,8 +87,6 @@ public class AnswerServlet extends HttpServlet {
 
 
 
-
-
 		  int machigaisuu =0;
 		  String answer1 = one_game_problemlist.get(mondaisuu).getNo1();
 		  if (!your_answer1.equals(answer1)) {
