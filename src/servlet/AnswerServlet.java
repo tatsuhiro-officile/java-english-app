@@ -30,7 +30,6 @@ public class AnswerServlet extends HttpServlet {
 	        dispatcher.forward(request, response);
 
 
-
   }
   protected void doPost(HttpServletRequest request,
       HttpServletResponse response)
@@ -72,8 +71,6 @@ public class AnswerServlet extends HttpServlet {
 			dispatcher.forward(request, response);
 
 	  }
-
-
 	  	String your_answer1 = request.getParameter("input_no1");
 	  	String your_answer2 = request.getParameter("input_no2");
 	  	String your_answer3 = request.getParameter("input_no3");
