@@ -104,7 +104,7 @@ public class ChatServlet extends HttpServlet {
 
     			Profile loginUser = (Profile) session.getAttribute("userId");
     			LocalDateTime localDateTime = LocalDateTime.now();
-    			DateTimeFormatter datetimeformatter = DateTimeFormatter.ofPattern("yyyy/MM/dd/");
+    			DateTimeFormatter datetimeformatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
     			String datetimeformated = datetimeformatter.format(localDateTime);
       // つぶやきをつぶやきリストに追加
     			Chat mutter = new Chat(loginUser.getNickName(), text,datetimeformated);

@@ -48,7 +48,7 @@
 <img src="${pageContext.request.contextPath}/pic/index.jpg" alt="リスト" class ="img">
 </p>
 <div class ="colored">
-<h1 class="center">英語脳を手に入れよう</h1>
+<h1 class="center">英語脳を手に入れる</h1>
 </div>
 
 
