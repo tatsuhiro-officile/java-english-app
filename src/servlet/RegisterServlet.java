@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import model.Done;
 import model.Done_register_Logic;
+import model.Login;
 import model.Originalid_Check;
 import model.Originalnickname_check;
 import model.Profile;
@@ -112,6 +113,12 @@ public class RegisterServlet extends HttpServlet {
     		problem1,problem2,problem3,problem4,problem5,problem6,
     		problem7,problem8,problem9,problem10,problem11,problem12);
     		session.setAttribute("userId",profile);
+
+    	    int id=0;
+
+
+    	    Login login = new Login(id, originalid,nickname, pass,point);
+    	    session.setAttribute("login", login);
     		int registerdone=  (int) session.getAttribute("registerdone");
 
     		Done done = new Done(originalid,0,0,0);
